@@ -67,13 +67,13 @@ feature "writing a new post" do
       expect(page).to_not have_content("The Post ..."), "Just the new post should be added to the page."
     end
 
-    scenario "user clicks on the like button and the likes on that post increase" do
+    scenario "user clicks on the like button and the likes on that post increase", { js: true } do
       visit "/"
       expect(page).to have_content "Share Anything"
       expect(page).to have_content "Share Your Thoughts"
       expect(page).to have_content @previous_post.title
 
-      find(".post:first-child .post_like_button").click
+      find("#posts article:first-child").find(".post_like_button").click
       expect(page).to_not have_content("The Post ..."), "Clicking the 'like' button should not navigate to a new page."
       expect(page).to have_content @previous_post.title
       expect(page).to have_content "1 likes"
