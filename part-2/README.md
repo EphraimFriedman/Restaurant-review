@@ -63,7 +63,7 @@ Fill in the form:
 
 ![](walkthrough/2-populatedform.png)
 
-Once we submit, our form goes away but we should have the post shown on the page.
+When we submit the form, the form inputs are reset, and the post is shown on the page.
 
 ![](walkthrough/3-submittedform.png)
 
