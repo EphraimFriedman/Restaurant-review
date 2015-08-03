@@ -57,7 +57,7 @@ Once all the tests have passed, you have completed Part 2 of the assessment. If 
 
 ## Screenshot Walkthrough
 Starting out, things are pretty normal.
-![](Walkthrough/1-start.png)
+![](walkthrough/1-start.png)
 
 Fill in the form:
 
