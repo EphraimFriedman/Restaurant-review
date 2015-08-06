@@ -2,36 +2,29 @@
 
 ## Summary
 
-In Part 3 of the assessment, we'll demonstrate our proficiency in building
+In Part 3 of the assessment, we will demonstrate our proficiency in building
 web-stack applications: user authentication, associations, validations,
 controllers, views, etc. Even a little bit of CSS.
 
 ### Site Overview
-
-We'll be building a simplified version of a blind auction site. In a blind
-auction, bidders do not see how much other bidders have bid.
+In this section, we will build a simplified version of Yelp. We will not worry about locations or ways of categorizing listings, but instead focus solely on creating restaurants and allowing users to review them.
 
 The required functionality of the site will be described in more detail in the
 *Releases* section, but here's a basic overview.
 
 #### All Users
-
-- Browse available items
+- Browse available restaurants
 
 #### Unregistered Users**
-
 - Register a new account
 
 #### Registered Users
-
 - Sign in
 - Sign out
-- List new items
-- Place bids on items
-- Have a profile showing their listing and bidding activity
+- Create new restaurants
+- Review a restaurant
 
 ### Completing the App
-
 Complete as much of this CRUD app as possible in the time allowed.  If time is
 running out and it looks like the app will not be completed, continue to work
 through the releases in order and complete as much as possible. Be sure to ask
@@ -45,19 +38,21 @@ We'll need to make sure that everything is set up before we begin working on the
 0. `$ bundle exec rake db:create`
 
 ### Release 0: User Registration
-
 Users will need to register for a new account. Create a link on the home page
 that will take them to a page where they can enter their desired username and
-password. There are a two constraints to this feature:
-
-1. The username must be unique
-1. The password must be at least 6 characters long
+password. For this feature to work properly, it is important that the username selected has not already been taken. Make sure to add the appropriate validations to enforce this constraint.
 
 If both constraints are met, the user should be considered logged in and
 redirected to the home page where all references to "Register" are removed.
 
+![](mockups/registration-link.png)
+![](mockups/registration-form.png)
+![](mockups/registration-success.png)
+
 If either constraint is not met, the user should see the registration form and
 the associated error messages.
+
+![](mockups/registration-unsuccessful.png)
 
 ### Release 1: Login/Logout
 
