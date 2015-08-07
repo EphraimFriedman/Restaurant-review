@@ -39,23 +39,22 @@ We'll need to make sure that everything is set up before we begin working on the
 
 ### Release 0: User Registration
 _Given:_
-
 * The current user does not have an account.
 
 ---------
 
 1. Create a "Register" link on the homepage.
-1. Present the user with a form to create a new account (username/email, password)
-  * Username/emails must be unique
+1. Present the user with a form to create a new account (email, password)
+  * Emails must be unique
 1. Upon submission, the user should be taken back to the homepage.
 1. The "Registration" link should no longer be visible.
-1. The user should see "Welcome: [username/email]"
+1. The user should see "Welcome: [email]"
 
 ![](mockups/registration-link.png)
 ![](mockups/registration-form.png)
 ![](mockups/registration-success.png)
 
-If the username/email has already been taken, the user should see the registration form and an error message "Sorry, but that [username/email] has already been taken".
+If the email has already been taken, the user should see the registration form and an error message "Sorry, but that email has already been taken".
 
 ![](mockups/registration-unsuccessful.png)
 
