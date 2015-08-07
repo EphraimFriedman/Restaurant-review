@@ -141,7 +141,7 @@ _Given:_
 
 ---------
 
-1. Add a link to edit restaurants to all the restaurants the user created
+1. Add a link to edit restaurants created by the user
 1. When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
 1. When the user submits the form
   * the user should be taken back to the home page
@@ -174,6 +174,7 @@ _Given_
 * The registered user is signed in
 
 --------
+
 1. Update the restaurant listings on the home page by making the name a link
 1. When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
 
