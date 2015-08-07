@@ -64,6 +64,7 @@ _Given:_
 
 * There is a previously registered user
 * User is not currently logged in:
+
 -------
 
 1. On the home page, create a link to login next to the registration link.
@@ -85,11 +86,15 @@ _Given:_
 
 * There is a previously registered user
 * User is currently logged in
+
 --------
 
 1. On the home page, create a link to logout.
 1. When the user clicks on the logout link they should be taken to the home page
    and the links "Register" and "Login" should both be visible.
+
+![](mockups/login-success.png)
+![](mockups/login-link.png)
 
 ### Release 2: CRUD'ing a Resorouce
 We'll not give users the ability to add new restaurants to the site.
@@ -124,6 +129,7 @@ _Given:_
 
 * The registered user is signed in
 * There exist previously-created restaurants
+
 -------
 
 1. Display all the restaurants
