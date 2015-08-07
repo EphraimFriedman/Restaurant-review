@@ -189,12 +189,14 @@ _Given_
 ------
 1. Add a section to the page requiring log in to review
 
-![](mockups/not-logged-in-on-restaraunt-page.png)
+![](mockups/not-logged-in-on-restaurant-page.png)
 
 _Given_
 * The registered user is signed in
 * The user is on a restaurant detail page
+
 -----
+
 1. Show a form allowing the user to
   * rate a restaurant (1 - 5)
   * provide a body for the review
@@ -213,7 +215,8 @@ _Given_
 -----
 1. Show all the reviews for a restaurant
 
-![](mockups/restaurant-page-with-reviews.png)
+![](mockups/restaurant-page-with-reviews-when-user-has-reviewed.png)
+![](mockups/restaurant-page-with-reviews-when-user-has-not-reviewed.png)
 
 ## Conclusion
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
