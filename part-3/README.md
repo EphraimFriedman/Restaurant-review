@@ -89,14 +89,12 @@ _Given:_
 
 --------
 
-1. On the home page, create a link to logout.
-1. When the user clicks on the logout link they should be taken to the home page
-   and the links "Register" and "Login" should both be visible.
+When the user clicks on the logout link they should be taken to the home page and the links "Register" and "Login" should both be visible.
 
 ![](mockups/login-success.png)
 ![](mockups/login-link.png)
 
-### Release 2: CRUD'ing a Resorouce
+### Release 2: CRUD'ing a Resource
 We'll not give users the ability to add new restaurants to the site.
 
 #### Creating Restuarants
@@ -120,7 +118,7 @@ _Given:_
   * The user should be taken back to the home page
 
 ![](mockups/create-restaurant-link.png)
-![](mockup/restaurant-form.png)
+![](mockups/restaurant-form.png)
 
 It would be nice to see what was created, so let's tackle that next.
 
@@ -140,6 +138,7 @@ _Given:_
 _Given:_
 * The registered user is signed in
 * The registered user has previously created restaurants
+
 ---------
 
 1. Add a link to edit restaurants to all the restaurants the user created
@@ -156,6 +155,7 @@ _Given:_
 _Given_
 * The registered user is signed in
 * The registered user has previously created restaurants
+
 ---------
 
 1. Add a link to delete restaurants to all the restaurants the user created
