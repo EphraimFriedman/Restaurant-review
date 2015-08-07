@@ -131,7 +131,6 @@ _Given:_
 
 ![](mockups/home-page-with-restaurants.png)
 
-
 #### Updating Restaurants
 _Given:_
 * The registered user is signed in
@@ -148,7 +147,7 @@ _Given:_
 ![](mockups/edit-restaurant-page.png)
 ![](mockups/home-page-with-edited-restaurant.png)
 
-#### Deleting Items
+#### Deleting Restaurants
 _Given_
 * The registered user is signed in
 * The registered user has previously created restaurants
@@ -162,85 +161,55 @@ _Given_
 ![](mockups/home-page-with-delete-restaurant-link.png)
 ![](mockups/home-page-with-restaurant-deleted.png)
 
-### Release 3: Bidding
+### Release 3: Review
+Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
 
-Up until now, the home page has largely just contained links to allow the user
-to register or login, or if they were logged in, to logout. Now that users have
-the ability to create items for others to bid on, let's start filling in the
-homepage.
+#### Restaurant Page
+_Given_
+* The registered user is signed in
 
-#### Viewing Active Items
+--------
+1. Update the restaurant listings on the home page by making the name a link
+1. When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
+
+![](mockups/home-page-restaurant-links.png)
+![](mockups/restaurant-details.png)
+
+#### Creating a Review
+_Given_
+* The user is _not_ logged in
+* The user is on a restaurant detail page
+
+------
+1. Add a section to the page requiring log in to review
+
+![](mockups/not-logged-in-on-restaraunt-page.png)
 
 _Given_
-
 * The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
-* There exist items which are active
+* The user is on a restaurant detail page
+-----
+1. Show a form allowing the user to
+  * rate a restaurant (1 - 5)
+  * provide a body for the review
+1. When the user submits the form
+  * the user should be returned to the restaurant page
+  * the user should no longer see the form
+  * the user should see a thank you message
 
-Create a section on the home page to list the items that are currently
-available and active. To clarify, active means the items have start date on or
-before today and the end date is on or after today.
+![](mockups/restaurant-page-with-review-form.png)
+![](mockups/restaurant-page-with-thank-you-message.png)
 
-#### Creating a Bid
-
+#### Viewing Restaurant Reviews
 _Given_
+* The user is on a restaurant detail page
 
-* The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
-* There exist items which are active
+-----
+1. Show all the reviews for a restaurant
 
-1. Make the name or title of the listed items in the home page a link. When the
-user clicks on a link for an item, they should be on a page that is displaying
-the details of the item. This will include the long form description and add a
-section on the page to display the current number of bidders.
-1. Add a form to the item detail page that will allow the user to enter a bid
-amount. The submit button for the form should say "Place Bid".
-1. When the user submits the bidding form, the page should reload. Where the
-form was located, there should be the text "Thank you for your bid. Good luck!"
-and the number of bidders section should be incremented by 1.
-
-#### Login or Register to Bid
-
-_Given:_
-
-* The current user is not logged in
-* The user is on the item details page for a previously-created item
-
-In place of the bidding form, a user should see the text "To place a bid please
-login or register." Both login and register should be links taking the user to
-their respective pages.
-
-### Release 4: Bid on Items on the Profile Page
-
-Now that we can bid on items, let's make it easy to keep track of the things we
-have bid on.
-
-#### Bid on Items
-
-_Given:_
-
-* The registered user is logged in
-* Registered user has previously placed bids on several items
-* User is currently on their profile page
-
-Create a section to display the items the user has bid on.
-
-#### Won Items
-
-_Given:_
-
-* The registered user is logged in
-* The registered user placed the highest bid on several items that are no longer active
-* The registered user is currently on their profile page
-
-Create a section to display the items they have won. This is items that are no
-longer active (end date is before today) and the bid placed on the item is the
-highest of all the bidders.
+![](mockups/restaurant-page-with-reviews.png)
 
 ## Conclusion
-
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
 changes.  Please wait until the end of the assessment period to submit your
 solution.
