@@ -38,112 +38,129 @@ We'll need to make sure that everything is set up before we begin working on the
 0. `$ bundle exec rake db:create`
 
 ### Release 0: User Registration
-Users will need to register for a new account. Create a link on the home page
-that will take them to a page where they can enter their desired username and
-password. For this feature to work properly, it is important that the username selected has not already been taken. Make sure to add the appropriate validations to enforce this constraint.
+_Given:_
 
-If both constraints are met, the user should be considered logged in and
-redirected to the home page where all references to "Register" are removed.
+* The current user does not have an account.
+
+---------
+
+1. Create a "Register" link on the homepage.
+1. Present the user with a form to create a new account (username/email, password)
+  * Username/emails must be unique
+1. Upon submission, the user should be taken back to the homepage.
+1. The "Registration" link should no longer be visible.
+1. The user should see "Welcome: [username/email]"
 
 ![](mockups/registration-link.png)
 ![](mockups/registration-form.png)
 ![](mockups/registration-success.png)
 
-If either constraint is not met, the user should see the registration form and
-the associated error messages.
+If the username/email has already been taken, the user should see the registration form and an error message "Sorry, but that [username/email] has already been taken".
 
 ![](mockups/registration-unsuccessful.png)
 
 ### Release 1: Login/Logout
-
 #### Login
-
 _Given:_
 
 * There is a previously registered user
 * User is not currently logged in:
+-------
 
-1. On the home page, create a link to login.
+1. On the home page, create a link to login next to the registration link.
 1. When a user clicks on this link they should be taken to a page with a form to
    enter their credentials.
 1. If the credentials match, the user should be taken back to the homepage and the
    login link should be replaced with a logout link.
-1. If the credentials do not match, the user should see the login form and an
-   error message stating the credentials were not valid.
+
+![](mockups/login-link.png)
+![](mockups/login-form.png)
+![](mockups/login-success.png)
+
+If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
+
+![](mockups/login-unsuccessful.png)
 
 #### Logout
+_Given:_
 
-Given there is a previously registered user and they are currently logged in:
+* There is a previously registered user
+* User is currently logged in
+--------
 
 1. On the home page, create a link to logout.
 1. When the user clicks on the logout link they should be taken to the home page
    and the links "Register" and "Login" should both be visible.
 
 ### Release 2: CRUD'ing a Resorouce
+We'll not give users the ability to add new restaurants to the site.
 
-The user's profile page is where users are able to manage their listed items.
-We'll start off by giving them the ability to add an item and then work through
-the remaining CRUD actions.
-
-#### Creating Items
-
+#### Creating Restuarants
 _Given:_
 
 * The registered user is signed in:
 
-1. On the home page create a link to the user's profile page.
-1. When the user clicks on the profile link they should be taken to their profile page.
-1. Create a link on this page to add an item to the auction site. The item
-   should include things like a name and/or title, description, when the user
-   would like the auction to start and when it should stop.
+--------
 
-*Note*: When creating and or editing an item, you'll need to create forms that
-allow you to enter dates. The HTML5 datetime input type is tricky to use with
-ActiveRecord. Consider using something like `<input type="text"
-name="my-date">` in the markup. When filling in the field, use the `YYYY-MM-DD`
-or `YYYY-MM-DD HH:MM:SS` format (e.g. 2015-04-01 14:30:00).
+1. On the home page create a link to add a restaurant
+  * This link should only be visible to signed in users
+1. When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
+  * name
+  * cuisine (e.g., American Pub, French Bakery, etc.)
+  * address
+  * city
+  * state
+  * zip
+1. When the user submits the form
+  * The user should be set as the restaurant's creator
+  * The user should be taken back to the home page
 
-After submitting an item, the user should be back on their profile page.
+![](mockups/create-restaurant-link.png)
+![](mockup/restaurant-form.png)
 
-#### Reading Items
+It would be nice to see what was created, so let's tackle that next.
 
+#### Reading Restuarants
 _Given:_
 
 * The registered user is signed in
-* There exist previously-created items
+* There exist previously-created restaurants
+-------
 
-1. Create a section on the profile page to display all the items. This section
-   should _not_ include the long form description of the item.
+1. Display all the restaurants
 
-#### Updating Items
+![](mockups/home-page-with-restaurants.png)
 
+
+#### Updating Restaurants
 _Given:_
-
 * The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
+* The registered user has previously created restaurants
+---------
 
-1. On the profile page, create an edit link associated to each of the items the
-   user has created. This link should only be visible if the user logged in is the
-   user that created the item.
-1. When the user clicks the edit link associated to the item, they should be
-   taken to a page to edit that item's details. After submitting this information
-   the user should be taken back to their profile page and see the item's updates
-   should be reflected on the page.
+1. Add a link to edit restaurants to all the restaurants the user created
+1. When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
+1. When the user submits the form
+  * the user should be taken back to the home page
+  * the restaurant's information should be updated
+
+![](mockups/home-page-with-edit-restaurant-links.png)
+![](mockups/edit-restaurant-page.png)
+![](mockups/home-page-with-edited-restaurant.png)
 
 #### Deleting Items
-
 _Given_
-
 * The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
+* The registered user has previously created restaurants
+---------
 
-1. On the profile page, create a delete link associated to each of the items
-   the user has created. Just like in the update section, this link should only be
-   visible if the user logged in is the user that created the item.
-1. When the user clicks the delete link, the user profile page should reload and
-   the item should no longer be visible.
+1. Add a link to delete restaurants to all the restaurants the user created
+1. When the user clicks the delete link
+  * the user should be taken back to the home page
+  * the restaurant should no longer display on the page
+
+![](mockups/home-page-with-delete-restaurant-link.png)
+![](mockups/home-page-with-restaurant-deleted.png)
 
 ### Release 3: Bidding
 
