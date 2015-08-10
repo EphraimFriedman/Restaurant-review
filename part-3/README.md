@@ -99,7 +99,7 @@ When the user clicks on the logout link they should be taken to the home page an
 ![](mockups/login-link.png)
 
 ### Release 2: CRUD'ing a Resource
-We'll not give users the ability to add new restaurants to the site.
+We'll now give users the ability to add new restaurants to the site.
 
 #### Creating Restuarants
 _Given:_
@@ -191,7 +191,8 @@ _Given_
 * The user is on a restaurant detail page
 
 ------
-1. Add a section to the page requiring log in to review
+1. Add a button to the page requiring log in to review
+1. When the user clicks this button they should be taken to the same page as the login instructions above
 
 ![](mockups/not-logged-in-on-restaurant-page.png)
 
@@ -208,6 +209,7 @@ _Given_
   * the user should be returned to the restaurant page
   * the user should no longer see the form
   * the user should see a thank you message
+  * the thank you message will only be visible when being redirected to the restaurant details page after creating a review
 
 ![](mockups/restaurant-page-with-review-form.png)
 ![](mockups/restaurant-page-with-thank-you-message.png)
@@ -218,8 +220,12 @@ _Given_
 
 -----
 1. Show all the reviews for a restaurant
+  * Only Show the review form if the user has not created a review.
 
+_User reviewed restaurant_
 ![](mockups/restaurant-page-with-reviews-when-user-has-reviewed.png)
+
+_User has not reviewed restaurant_
 ![](mockups/restaurant-page-with-reviews-when-user-has-not-reviewed.png)
 
 ## Conclusion
