@@ -46,8 +46,11 @@ _Given:_
 1. Create a "Register" link on the homepage.
 1. When the user clicks the "Register" link they should be take to a page with a form to create a new account (email, password)
   * Emails must be unique
-1. Upon submission, the user should be taken back to the homepage.
-1. The "Registration" link should no longer be visible.
+1. Upon submission:
+  * the user record should be created
+  * the user should be logged in
+  * the user should be taken back to the homepage
+1. The "Registration" link should no longer be visible
 1. The user should see "Welcome: [email]"
 
 ![](mockups/registration-link.png)
