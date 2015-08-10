@@ -50,8 +50,9 @@ _Given:_
   * the user record should be created
   * the user should be logged in
   * the user should be taken back to the homepage
-1. The "Registration" link should no longer be visible
-1. The user should see "Welcome: [email]"
+1. When returning to the home page
+  * The "Register" link should no longer be visible
+  * The user should see "Welcome: [email]"
 
 ![](mockups/registration-link.png)
 ![](mockups/registration-form.png)
