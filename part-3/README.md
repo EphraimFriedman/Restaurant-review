@@ -15,7 +15,7 @@ The required functionality of the site will be described in more detail in the
 #### All Users
 - Browse available restaurants
 
-#### Unregistered Users**
+#### Unregistered Users
 - Register a new account
 
 #### Registered Users
@@ -43,22 +43,28 @@ _Given:_
 
 ---------
 
-1. Create a "Register" link on the homepage.
-1. When the user clicks the "Register" link they should be take to a page with a form to create a new account (email, password)
+Create a "Register" link on the homepage.
+![](mockups/registration-link.png)
+
+When the user clicks the "Register" link they should be taken to a page with a form to create a new account (email, password)
   * Emails must be unique
-1. Upon submission:
+
+![](mockups/registration-form.png)
+
+Upon successful submission:
   * the user record should be created
   * the user should be logged in
   * the user should be taken back to the homepage
-1. When returning to the home page
-  * The "Register" link should no longer be visible
-  * The user should see "Welcome: [email]"
 
-![](mockups/registration-link.png)
-![](mockups/registration-form.png)
+When returning to the home page:
+  * the "Register" link should no longer be visible
+  * the user should see "Welcome: [email]"
+
 ![](mockups/registration-success.png)
 
-If the email has already been taken, the user should see the registration form and an error message "Sorry, but that email has already been taken".
+Upon unsuccessful submission:
+  * the user should be returned to the registration page
+  * the user should see an error message "Sorry, but tht email has already been taken."
 
 ![](mockups/registration-unsuccessful.png)
 
@@ -71,14 +77,17 @@ _Given:_
 
 -------
 
-1. On the home page, create a link to login next to the registration link.
-1. When a user clicks on this link they should be taken to a page with a form to
-   enter their credentials.
-1. If the credentials match, the user should be taken back to the homepage and the
-   login link should be replaced with a logout link.
+On the home page, create a link to login next to the registration link.
 
 ![](mockups/login-link.png)
+
+When a user clicks on this link they should be taken to a page with a form to
+enter their credentials.
+
 ![](mockups/login-form.png)
+
+If the credentials match, the user should be taken back to the homepage and the login link should be replaced with a logout link.
+
 ![](mockups/login-success.png)
 
 If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
@@ -93,9 +102,10 @@ _Given:_
 
 --------
 
+![](mockups/login-success.png)
+
 When the user clicks on the logout link they should be taken to the home page and the links "Register" and "Login" should both be visible.
 
-![](mockups/login-success.png)
 ![](mockups/login-link.png)
 
 ### Release 2: CRUD'ing a Resource
@@ -108,33 +118,33 @@ _Given:_
 
 --------
 
-1. On the home page create a link to add a restaurant
-  * This link should only be visible to signed in users
-1. When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
+On the home page create a link to add a restaurant, this link should only be visible to signed in users.
+
+![](mockups/create-restaurant-link.png)
+
+When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
   * name
   * cuisine (e.g., American Pub, French Bakery, etc.)
   * address
   * city
   * state
   * zip
-1. When the user submits the form
-  * The user should be set as the restaurant's creator
-  * The user should be taken back to the home page
 
-![](mockups/create-restaurant-link.png)
 ![](mockups/restaurant-form.png)
 
-It would be nice to see what was created, so let's tackle that next.
+When the user submits the form
+  * the user should be set as the restaurant's creator
+  * the user should be taken back to the home page
+
+![](mockups/create-restaurant-link.png)
 
 #### Reading Restuarants
 _Given:_
-
-* The registered user is signed in
-* There exist previously-created restaurants
+* There exist previously created restaurants
 
 -------
 
-1. Display all the restaurants
+Display all the restaurants
 
 ![](mockups/home-page-with-restaurants.png)
 
@@ -145,14 +155,18 @@ _Given:_
 
 ---------
 
-1. Add a link to edit restaurants created by the user
-1. When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
-1. When the user submits the form
+Add a link to edit restaurants created by the user
+
+![](mockups/home-page-with-edit-restaurant-links.png)
+
+When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
+
+![](mockups/edit-restaurant-page.png)
+
+When the user submits the form
   * the user should be taken back to the home page
   * the restaurant's information should be updated
 
-![](mockups/home-page-with-edit-restaurant-links.png)
-![](mockups/edit-restaurant-page.png)
 ![](mockups/home-page-with-edited-restaurant.png)
 
 #### Deleting Restaurants
@@ -162,12 +176,14 @@ _Given_
 
 ---------
 
-1. Add a link to delete restaurants to all the restaurants the user created
-1. When the user clicks the delete link
-  * the user should be taken back to the home page
-  * the restaurant should no longer display on the page
+Add a link to delete restaurants to all the restaurants the user created
 
 ![](mockups/home-page-with-delete-restaurant-link.png)
+
+When the user clicks the delete link
+  * the user should be taken back to the home page
+  * the restaurant should no longer appear on the page
+
 ![](mockups/home-page-with-restaurant-deleted.png)
 
 ### Release 3: Review
@@ -175,14 +191,16 @@ Knowing that all these restaurants exist is a great start, now let's provide a w
 
 #### Restaurant Page
 _Given_
-* The registered user is signed in
+* There exist previously created restaurants
 
 --------
 
-1. Update the restaurant listings on the home page by making the name a link
-1. When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
+Update the restaurant listings on the home page by making the name a link
 
 ![](mockups/home-page-restaurant-links.png)
+
+When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
+
 ![](mockups/restaurant-details.png)
 
 #### Creating a Review
@@ -191,10 +209,13 @@ _Given_
 * The user is on a restaurant detail page
 
 ------
-1. Add a button to the page requiring log in to review
-1. When the user clicks this button they should be taken to the same page as the login instructions above
+Add a button to the page requiring log in to review
 
 ![](mockups/not-logged-in-on-restaurant-page.png)
+
+When the user clicks this button they should be taken to the same page as the login instructions above
+
+![](mockups/login-form.png)
 
 _Given_
 * The registered user is signed in
@@ -202,16 +223,18 @@ _Given_
 
 -----
 
-1. Show a form allowing the user to
+Show a form allowing the user to
   * rate a restaurant (1 - 5)
   * provide a body for the review
-1. When the user submits the form
+
+![](mockups/restaurant-page-with-review-form.png)
+
+When the user submits the form
   * the user should be returned to the restaurant page
   * the user should no longer see the form
   * the user should see a thank you message
   * the thank you message will only be visible when being redirected to the restaurant details page after creating a review
 
-![](mockups/restaurant-page-with-review-form.png)
 ![](mockups/restaurant-page-with-thank-you-message.png)
 
 #### Viewing Restaurant Reviews
@@ -219,7 +242,8 @@ _Given_
 * The user is on a restaurant detail page
 
 -----
-1. Show all the reviews for a restaurant
+
+Show all the reviews for a restaurant
   * Only Show the review form if the user has not created a review.
 
 _User reviewed restaurant_
