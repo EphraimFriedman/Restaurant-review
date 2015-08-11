@@ -86,9 +86,9 @@ enter their credentials.
 
 ![](mockups/login-form.png)
 
-If the credentials match, the user should be taken back to the homepage and the login link should be replaced with a logout link.
+If the credentials match, the user should be taken back to the homepage.
 
-![](mockups/login-success.png)
+![](mockups/registration-success.png)
 
 If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
 
@@ -102,7 +102,7 @@ _Given:_
 
 --------
 
-Create a link "logout" link on the homepage.
+Create a "logout" link on the homepage.
 
 ![](mockups/login-success.png)
 
