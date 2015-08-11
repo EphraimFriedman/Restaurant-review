@@ -4,20 +4,42 @@
 In Part 2 we'll take a functioning Sinatra application and enhance the user experience by adding some AJAX calls.
 
 ### User Stories
-**Current Site**.  The application is a simple site where users can write posts.  If a user wanted to write a post, here's the process.
+#### Current Site
 
-1. User visits the site root.
-1. User fills out and submits the form.
-1. User is taken back to the posts page where the saved post is displayed.
+The application is a simple site where users can write posts.  If a user wanted to write a post, here's the process.
 
-**Future Site**. Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests, and we'll update the DOM based on the responses.  After the site is updated, here's what the user experience will be.
+User visits the site root.
 
-1. User visits the site root.
-1. User fills out and submits the form.
-1. Details of the saved post are added to the DOM (without refreshing).
-1. The form is reset to allow another post.
+![](walkthrough/1-start.png)
 
-The user can also "like" a post. This flow will again keep the user on the same
+User fills out and submits the form.
+
+![](walkthrough/2-populatedform.png)
+
+User is taken back to the posts page where the saved post is displayed.
+
+![](walkthrough/3-submittedform.png)
+
+#### Future Site
+
+Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests, and we'll update the DOM based on the responses.  After the site is updated, here's what the user experience will be.
+
+User visits the site root.
+
+![](walkthrough/1-start.png)
+
+User clicks "Share Your Thoughts" and the form appear (without refreshing).
+
+![](walkthrough/2-populatedform.png)
+
+User fills out and submits the form. Details of the saved post are added to the DOM (without refreshing).
+
+![](walkthrough/4-liked.png)
+
+Note that the form is also reset to allow another post.
+
+##### Liking
+In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will again keep the user on the same
 page.
 
 1. User visits the site root.
@@ -54,19 +76,3 @@ Use the failing scenario and future-site user story from the *Summary* to guide 
 
 ## Conclusion
 Once all the tests have passed, you have completed Part 2 of the assessment. If you haven't done so already, commit your changes and move on to Part 3.
-
-## Screenshot Walkthrough
-Starting out, things are pretty normal.
-![](walkthrough/1-start.png)
-
-Fill in the form:
-
-![](walkthrough/2-populatedform.png)
-
-When we submit the form, the form inputs are reset, and the post is shown on the page.
-
-![](walkthrough/3-submittedform.png)
-
-Clicking on the like button increments the like count.
-
-![](walkthrough/4-liked.png)
