@@ -2,36 +2,29 @@
 
 ## Summary
 
-In Part 3 of the assessment, we'll demonstrate our proficiency in building
+In Part 3 of the assessment, we will demonstrate our proficiency in building
 web-stack applications: user authentication, associations, validations,
 controllers, views, etc. Even a little bit of CSS.
 
 ### Site Overview
-
-We'll be building a simplified version of a blind auction site. In a blind
-auction, bidders do not see how much other bidders have bid.
+In this section, we will build a simplified version of Yelp. We will not worry about locations or ways of categorizing listings, but instead focus solely on creating restaurants and allowing users to review them.
 
 The required functionality of the site will be described in more detail in the
 *Releases* section, but here's a basic overview.
 
 #### All Users
+- Browse available restaurants
 
-- Browse available items
-
-#### Unregistered Users**
-
+#### Unregistered Users
 - Register a new account
 
 #### Registered Users
-
 - Sign in
 - Sign out
-- List new items
-- Place bids on items
-- Have a profile showing their listing and bidding activity
+- Create new restaurants
+- Review a restaurant
 
 ### Completing the App
-
 Complete as much of this CRUD app as possible in the time allowed.  If time is
 running out and it looks like the app will not be completed, continue to work
 through the releases in order and complete as much as possible. Be sure to ask
@@ -45,190 +38,224 @@ We'll need to make sure that everything is set up before we begin working on the
 0. `$ bundle exec rake db:create`
 
 ### Release 0: User Registration
+_Given:_
+* The current user does not have an account.
 
-Users will need to register for a new account. Create a link on the home page
-that will take them to a page where they can enter their desired username and
-password. There are a two constraints to this feature:
+---------
 
-1. The username must be unique
-1. The password must be at least 6 characters long
+Create a "Register" link on the homepage.
+![](mockups/registration-link.png)
 
-If both constraints are met, the user should be considered logged in and
-redirected to the home page where all references to "Register" are removed.
+When the user clicks the "Register" link they should be taken to a page with a form to create a new account (email, password)
+  * Emails must be unique
 
-If either constraint is not met, the user should see the registration form and
-the associated error messages.
+![](mockups/registration-form.png)
+
+Upon successful submission:
+  * the user record should be created
+  * the user should be logged in
+  * the user should be taken back to the homepage
+
+When returning to the home page:
+  * the "Register" link should no longer be visible
+  * the user should see "Welcome: [email]"
+
+![](mockups/registration-success.png)
+
+Upon unsuccessful submission:
+  * the user should be returned to the registration page
+  * the user should see an error message "Sorry, but that email has already been taken."
+
+![](mockups/registration-unsuccessful.png)
 
 ### Release 1: Login/Logout
-
 #### Login
-
 _Given:_
 
 * There is a previously registered user
 * User is not currently logged in:
 
-1. On the home page, create a link to login.
-1. When a user clicks on this link they should be taken to a page with a form to
-   enter their credentials.
-1. If the credentials match, the user should be taken back to the homepage and the
-   login link should be replaced with a logout link.
-1. If the credentials do not match, the user should see the login form and an
-   error message stating the credentials were not valid.
+-------
+
+On the home page, create a link to login next to the registration link.
+
+![](mockups/login-link.png)
+
+When a user clicks on this link they should be taken to a page with a form to
+enter their credentials.
+
+![](mockups/login-form.png)
+
+If the credentials match, the user should be taken back to the homepage.
+
+![](mockups/registration-success.png)
+
+If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
+
+![](mockups/login-unsuccessful.png)
 
 #### Logout
+_Given:_
 
-Given there is a previously registered user and they are currently logged in:
+* There is a previously registered user
+* User is currently logged in
 
-1. On the home page, create a link to logout.
-1. When the user clicks on the logout link they should be taken to the home page
-   and the links "Register" and "Login" should both be visible.
+--------
 
-### Release 2: CRUD'ing a Resorouce
+Create a "logout" link on the homepage.
 
-The user's profile page is where users are able to manage their listed items.
-We'll start off by giving them the ability to add an item and then work through
-the remaining CRUD actions.
+![](mockups/login-success.png)
 
-#### Creating Items
+When the user clicks on the logout link they should be taken to the home page and the links "Register" and "Login" should both be visible.
 
+![](mockups/login-link.png)
+
+### Release 2: CRUD'ing a Resource
+We'll now give users the ability to add new restaurants to the site.
+
+#### Creating Restuarants
 _Given:_
 
 * The registered user is signed in:
 
-1. On the home page create a link to the user's profile page.
-1. When the user clicks on the profile link they should be taken to their profile page.
-1. Create a link on this page to add an item to the auction site. The item
-   should include things like a name and/or title, description, when the user
-   would like the auction to start and when it should stop.
+--------
 
-*Note*: When creating and or editing an item, you'll need to create forms that
-allow you to enter dates. The HTML5 datetime input type is tricky to use with
-ActiveRecord. Consider using something like `<input type="text"
-name="my-date">` in the markup. When filling in the field, use the `YYYY-MM-DD`
-or `YYYY-MM-DD HH:MM:SS` format (e.g. 2015-04-01 14:30:00).
+On the home page create a link to add a restaurant, this link should only be visible to signed in users.
 
-After submitting an item, the user should be back on their profile page.
+![](mockups/create-restaurant-link.png)
 
-#### Reading Items
+When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
+  * name
+  * cuisine (e.g., American Pub, French Bakery, etc.)
+  * address
+  * city
+  * state
+  * zip
 
+![](mockups/restaurant-form.png)
+
+When the user submits the form
+  * the user should be set as the restaurant's creator
+  * the user should be taken back to the home page
+
+![](mockups/create-restaurant-link.png)
+
+#### Reading Restuarants
 _Given:_
+* There exist previously created restaurants
 
-* The registered user is signed in
-* There exist previously-created items
+-------
 
-1. Create a section on the profile page to display all the items. This section
-   should _not_ include the long form description of the item.
+Display all the restaurants
 
-#### Updating Items
+![](mockups/home-page-with-restaurants.png)
 
+#### Updating Restaurants
 _Given:_
-
 * The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
+* The registered user has previously created restaurants
 
-1. On the profile page, create an edit link associated to each of the items the
-   user has created. This link should only be visible if the user logged in is the
-   user that created the item.
-1. When the user clicks the edit link associated to the item, they should be
-   taken to a page to edit that item's details. After submitting this information
-   the user should be taken back to their profile page and see the item's updates
-   should be reflected on the page.
+---------
 
-#### Deleting Items
+Add a link to edit restaurants created by the user
+
+![](mockups/home-page-with-edit-restaurant-links.png)
+
+When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
+
+![](mockups/edit-restaurant-page.png)
+
+When the user submits the form
+  * the user should be taken back to the home page
+  * the restaurant's information should be updated
+
+![](mockups/home-page-with-edited-restaurant.png)
+
+#### Deleting Restaurants
+_Given_
+* The registered user is signed in
+* The registered user has previously created restaurants
+
+---------
+
+Add a link to delete restaurants to all the restaurants the user created
+
+![](mockups/home-page-with-delete-restaurant-link.png)
+
+When the user clicks the delete link
+  * the restaurant record should be removed from the data store
+  * the user should be taken back to the home page
+  * the restaurant should no longer appear on the page
+
+![](mockups/home-page-with-restaurant-deleted.png)
+
+### Release 3: Review
+Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
+
+#### Restaurant Page
+_Given_
+* There exist previously created restaurants
+
+--------
+
+Update the restaurant listings on the home page by making the name a link
+
+![](mockups/home-page-restaurant-links.png)
+
+When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
+
+![](mockups/restaurant-details.png)
+
+#### Creating a Review
+_Given_
+* The user is _not_ logged in
+* The user is on a restaurant detail page
+
+------
+Add a button to the page requiring log in to review
+
+![](mockups/not-logged-in-on-restaurant-page.png)
+
+When the user clicks this button they should be taken to the same page as the login instructions above
+
+![](mockups/login-form.png)
 
 _Given_
-
 * The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
+* The user is on a restaurant detail page
 
-1. On the profile page, create a delete link associated to each of the items
-   the user has created. Just like in the update section, this link should only be
-   visible if the user logged in is the user that created the item.
-1. When the user clicks the delete link, the user profile page should reload and
-   the item should no longer be visible.
+-----
 
-### Release 3: Bidding
+Show a form allowing the user to
+  * rate a restaurant (1 - 5)
+  * provide a body for the review
 
-Up until now, the home page has largely just contained links to allow the user
-to register or login, or if they were logged in, to logout. Now that users have
-the ability to create items for others to bid on, let's start filling in the
-homepage.
+![](mockups/restaurant-page-with-review-form.png)
 
-#### Viewing Active Items
+When the user submits the form
+  * the user should be returned to the restaurant page
+  * the user should no longer see the form
+  * the user should see a thank you message
+  * the thank you message will only be visible when being redirected to the restaurant details page after creating a review
 
+![](mockups/restaurant-page-with-thank-you-message.png)
+
+#### Viewing Restaurant Reviews
 _Given_
+* The user is on a restaurant detail page
 
-* The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
-* There exist items which are active
+-----
 
-Create a section on the home page to list the items that are currently
-available and active. To clarify, active means the items have start date on or
-before today and the end date is on or after today.
+Show all the reviews for a restaurant
+  * Only Show the review form if the user has not created a review.
 
-#### Creating a Bid
+_User reviewed restaurant_
+![](mockups/restaurant-page-with-reviews-when-user-has-reviewed.png)
 
-_Given_
-
-* The registered user is signed in
-* There exist previously-created items; some owned by the logged-in user,
-  others not
-* There exist items which are active
-
-1. Make the name or title of the listed items in the home page a link. When the
-user clicks on a link for an item, they should be on a page that is displaying
-the details of the item. This will include the long form description and add a
-section on the page to display the current number of bidders.
-1. Add a form to the item detail page that will allow the user to enter a bid
-amount. The submit button for the form should say "Place Bid".
-1. When the user submits the bidding form, the page should reload. Where the
-form was located, there should be the text "Thank you for your bid. Good luck!"
-and the number of bidders section should be incremented by 1.
-
-#### Login or Register to Bid
-
-_Given:_
-
-* The current user is not logged in
-* The user is on the item details page for a previously-created item
-
-In place of the bidding form, a user should see the text "To place a bid please
-login or register." Both login and register should be links taking the user to
-their respective pages.
-
-### Release 4: Bid on Items on the Profile Page
-
-Now that we can bid on items, let's make it easy to keep track of the things we
-have bid on.
-
-#### Bid on Items
-
-_Given:_
-
-* The registered user is logged in
-* Registered user has previously placed bids on several items
-* User is currently on their profile page
-
-Create a section to display the items the user has bid on.
-
-#### Won Items
-
-_Given:_
-
-* The registered user is logged in
-* The registered user placed the highest bid on several items that are no longer active
-* The registered user is currently on their profile page
-
-Create a section to display the items they have won. This is items that are no
-longer active (end date is before today) and the bid placed on the item is the
-highest of all the bidders.
+_User has not reviewed restaurant_
+![](mockups/restaurant-page-with-reviews-when-user-has-not-reviewed.png)
 
 ## Conclusion
-
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
 changes.  Please wait until the end of the assessment period to submit your
 solution.
