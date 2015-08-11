@@ -64,7 +64,7 @@ When returning to the home page:
 
 Upon unsuccessful submission:
   * the user should be returned to the registration page
-  * the user should see an error message "Sorry, but tht email has already been taken."
+  * the user should see an error message "Sorry, but that email has already been taken."
 
 ![](mockups/registration-unsuccessful.png)
 
@@ -101,6 +101,8 @@ _Given:_
 * User is currently logged in
 
 --------
+
+Create a link "logout" link on the homepage.
 
 ![](mockups/login-success.png)
 
@@ -181,6 +183,7 @@ Add a link to delete restaurants to all the restaurants the user created
 ![](mockups/home-page-with-delete-restaurant-link.png)
 
 When the user clicks the delete link
+  * the restaurant record should be removed from the data store
   * the user should be taken back to the home page
   * the restaurant should no longer appear on the page
 
