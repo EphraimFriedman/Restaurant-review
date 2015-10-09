@@ -1,44 +1,38 @@
-describe("Player", function(){
-  var player;
+describe("Employee", function(){
+  var employee;
 
   beforeEach(function(){
-    player = new Player({firstName: "Lysette", atBats: 103, hits: 27, runs: 3});
+    employee = new Employee({firstName: "Lysette", sales: [500, 100, 250, 1000]});
   });
 
   describe("type", function() {
-    it("is a player object", function() {
-      expect(player).toEqual(jasmine.any(Player));
+    it("is a employee object", function() {
+      expect(employee).toEqual(jasmine.any(Employee));
     });
   });
 
   describe("firstName", function() {
     it("has a first name", function() {
-      expect(player.firstName).toEqual("Lysette");
+      expect(employee.firstName).toEqual("Lysette");
     });
   });
 
-  describe("atBat", function(){
-    it("has an atBats", function(){
-      expect(player.atBats).toEqual(103);
+  describe("sales", function(){
+    it("has a sales property", function(){
+      expect(employee.sales).toEqual([500, 100, 250, 1000]);
     });
   });
 
-  describe("hits", function(){
-    it("has hits", function(){
-      expect(player.hits).toEqual(27);
+  describe("totalSales", function(){
+    it("calculates the total sales for the employee", function(){
+      expect(employee.totalSales()).toBe(1850);
     });
   });
 
-  describe("runs", function(){
-    it("has runs", function(){
-      expect(player.runs).toEqual(3);
-    });
-  });
-
-  describe("battingAverage", function(){
-    it("Returns the player's hits divided by player's atBats", function(){
-      expect(player.battingAverage()).toBeCloseTo(0.262, 2);
-    });
+  describe("averageSales", function(){
+    it("calculates the average sale for the employee", function(){
+      expect(employee.averageSales()).toBeCloseTo(462.5, 2);
+    })
   });
 
 });
