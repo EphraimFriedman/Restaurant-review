@@ -1,5 +1,5 @@
-describe("Roster", function() {
-  var roster, jalil, irene, kelvin, myra;
+describe("SalesTeam", function() {
+  var team, jalil, irene, kelvin, myra;
 
   beforeEach(function() {
     // Define player objects
