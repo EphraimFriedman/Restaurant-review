@@ -57,9 +57,16 @@ Keep in mind that a Jasmine test _is just JavaScript_: this means that you can
 use tools like `console.log()` or `debugger` or any of your Chrome dev tools to
 "get inside" the test or inside your `Employee` or `SalesTeam` implementations.
 
+Also, while JavaScript may be relatively new to you, recall that it provides
+a _wealth_ of methods to help you implement your custom methods.  `Array.prototype`
+implements methods such as `sort` among others.  Consult the 
+[Array.prototype][proto] page.
+
 Just because the _form_ is unfamiliar, don't forget your training!
 
 ## Conclusion
 
 Once all the tests have passed, you have completed Part 1 of the assessment. If
 you haven't done so already, commit your changes and move on to Part 2.
+
+[proto]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/prototype
