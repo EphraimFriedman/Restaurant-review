@@ -51,6 +51,13 @@ Once the tests for the custom `Employee` object pass, move on to the
 `SalesTeam` object type.  Write the code for the custom sales team object in
 the file `salesTeam.js`.  Work through the tests until all of the tests pass.
 
+### TIP
+
+Keep in mind that a Jasmine test _is just JavaScript_: this means that you can
+use tools like `console.log()` or `debugger` or any of your Chrome dev tools to
+"get inside" the test or inside your `Employee` or `SalesTeam` implementations.
+
+Just because the _form_ is unfamiliar, don't forget your training!
 
 ## Conclusion
 
