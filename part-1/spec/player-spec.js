@@ -36,7 +36,7 @@ describe("Player", function(){
   });
 
   describe("battingAverage", function(){
-    it("calculates the battingAverage", function(){
+    it("Returns the player's hits divided by player's atBats", function(){
       expect(player.battingAverage()).toBeCloseTo(0.262, 2);
     });
   });
