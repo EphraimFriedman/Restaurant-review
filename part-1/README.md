@@ -1,6 +1,11 @@
 # Part 1: JavaScript Objects
 ## Summary
-In Part 1 of the assessment, we're going to write JavaScript.  Specifically, we're going to define a pair of custom objects:  `SalesTeem` and `Employee`.  Each of these custom objects will have properties and behaviors specific to itself.  Tests have been written to guide you through the development of each object.
+
+In Part 1 of the assessment, we're going to write JavaScript.  Specifically,
+we're going to define a pair of custom objects:  `SalesTeam` and `Employee`.
+Each of these custom objects will have properties and behaviors specific to
+itself.  Tests have been written to guide you through the development of each
+object.
 
 ### Reading Jasmine Tests
 The tests describing the behaviors of our custom objects have been written using Jasmine, which might be unfamiliar to you.  That's perfectly fine.  We won't be writing any Jasmine tests today—just reading them.  Jasmine's syntax is very similar to RSpec's; we'll see `describe()` and `it()`—only in JavaScript, not Ruby.  When we call either of these functions, instead of passing a block as we would in Ruby, we'll pass a function.
