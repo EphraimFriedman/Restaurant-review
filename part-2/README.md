@@ -26,10 +26,6 @@ Our enhancements will make it so the user never leaves the homepage.  All the re
 
 User visits the site root.
 
-![](walkthrough/1-start.png)
-
-User clicks "Share Your Thoughts" and the form appear (without refreshing).
-
 ![](walkthrough/2-populatedform.png)
 
 User fills out and submits the form. Details of the saved post are added to the DOM (without refreshing).
