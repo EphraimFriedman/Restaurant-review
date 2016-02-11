@@ -40,9 +40,23 @@ a browser. On the command line navigate to the `part-1` directory and then run
 $ open SpecRunner.html
 ```
 
-This should launch a browser which will execute all of the Jasmine tests.  At
-the outset, all tests fail.  Write code in the file `employee.js` so that all
-of the tests for the employee pass.
+You are also provided an English-language version of the tests here.
+
+#### Context
+
+Assume we create an instance of `Employee` that is initialized with a first name
+and an `Array` of numbers representing their sales. You may assume this
+happens before each test.
+
+#### Tests
+
+* The result of creating a new `Employee` instance is an object of type `Employee`
+* The new instance's first name matches the one that was passed in during initialization
+* The new instance's `sales` Array has the same sales values as the sales values that were passed in during initialization
+* The new instance can return a total sales value based on summing all the sales' values
+* The new instance can return an average sale value that is computed based on the content of the sales that were passed in during initialization
+
+Once all the tests are passing, you're done!
 
 ### Release 1: SalesTeam
 
