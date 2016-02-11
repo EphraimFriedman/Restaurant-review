@@ -33,9 +33,8 @@ the tests in the browser.
 ### Release 0: Employee
 
 We'll start by focusing on the tests describing our employee (see
-`spec/employee-spec.js`).  To run the tests, navigate to the `part-1`
-directory and execute:
-
+`spec/employee_spec.js`).  To run the tests, open the file `SpecRunner.html` in
+a browser. On the command line navigate to the `part-1` directory and then run
 
 ```
 $ open SpecRunner.html
