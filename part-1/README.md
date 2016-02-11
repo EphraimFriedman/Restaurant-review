@@ -53,16 +53,33 @@ happens before each test.
 * The result of creating a new `Employee` instance is an object of type `Employee`
 * The new instance's first name matches the one that was passed in during initialization
 * The new instance's `sales` Array has the same sales values as the sales values that were passed in during initialization
-* The new instance can return a total sales value based on summing all the sales' values
-* The new instance can return an average sale value that is computed based on the content of the sales that were passed in during initialization
+* The new instance's `totalSales()` method returns a total sales value based on summing all the sales' values
+* The new instance's `averageSales()` method returns an average sale value that is computed based on the values of the sales that were passed in during initialization
 
 Once all the tests are passing, you're done!
 
 ### Release 1: SalesTeam
 
 Once the tests for the custom `Employee` object pass, move on to the
-`SalesTeam` object type.  Write the code for the custom sales team object in
-the file `salesTeam.js`.  Work through the tests until all of the tests pass.
+`SalesTeam` object type.  Just as above, start by fixing the first test in
+`spec/sales-team.js`. To make the test in `spec/sales-team.js` pass you will
+make edits to `salesTeam.js`. Continue onward by fixing the remaining tests.
+
+You are also provided an English-language version of the tests here.
+
+#### Context
+
+Assume that four `Employee`s are created. A new instance of `SalesTeam` is
+initialized with an Array of these `Employee`s.  You may assume this
+initialization happens before each test.
+
+You are also provided an English-language version of the tests here.
+
+#### Tests
+
+* The new instances `employees` Array has the same scores as the scores that were passed in during initialization
+* The new instance's method `find` method searches through the `employees` Array to find the one whose first name matches
+* The new instance's method `topPerformer` method searches through the `employees` Array to find the one whose average sale is highest
 
 ### TIP
 
