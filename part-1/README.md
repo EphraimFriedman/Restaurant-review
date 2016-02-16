@@ -40,7 +40,7 @@ a browser. On the command line navigate to the `part-1` directory and then run
 $ open SpecRunner.html
 ```
 
-You are also provided an English-language version of the tests here.
+You are also provided an English-language version of the tests below.
 
 #### Context
 
@@ -65,15 +65,13 @@ Once the tests for the custom `Employee` object pass, move on to the
 `spec/sales-team.js`. To make the test in `spec/sales-team.js` pass you will
 make edits to `salesTeam.js`. Continue onward by fixing the remaining tests.
 
-You are also provided an English-language version of the tests here.
+You are also provided an English-language version of the tests below.
 
 #### Context
 
 Assume that four `Employee`s are created. A new instance of `SalesTeam` is
 initialized with an Array of these `Employee`s.  You may assume this
 initialization happens before each test.
-
-You are also provided an English-language version of the tests here.
 
 #### Tests
 
