@@ -86,7 +86,7 @@ use tools like `console.log()` or `debugger` or any of your Chrome dev tools to
 
 Also, while JavaScript may be relatively new to you, recall that it provides
 a _wealth_ of methods to help you implement your custom methods.  `Array.prototype`
-implements methods such as `sort` among others.  Consult the 
+implements methods such as `sort` among others.  Consult the
 [Array.prototype][proto] page.
 
 Just because the _form_ is unfamiliar, don't forget your training!
