@@ -178,11 +178,11 @@ _Given_
 
 ---------
 
-Add a link to delete restaurants to all the restaurants the user created
+Add a button to delete a restaurant to each restaurant the user created
 
-![](mockups/home-page-with-delete-restaurant-link.png)
+![](mockups/home-page-with-delete-restaurant-button.png)
 
-When the user clicks the delete link
+When the user clicks the delete button
   * the restaurant record should be removed from the data store
   * the user should be taken back to the home page
   * the restaurant should no longer appear on the page
