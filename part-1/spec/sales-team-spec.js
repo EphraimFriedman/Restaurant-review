@@ -12,12 +12,6 @@ describe("SalesTeam", function() {
     team = new SalesTeam([jalil, myra, irene, kelvin]);
   });
 
-  describe("type", function() {
-    it("is a SalesTeam object", function() {
-      expect(team).toEqual(jasmine.any(SalesTeam));
-    });
-  });
-
   describe("employees", function() {
     it("has employees", function() {
       expect(team.employees).toEqual([jalil, myra, irene, kelvin]);

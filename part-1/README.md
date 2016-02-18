@@ -33,23 +33,50 @@ the tests in the browser.
 ### Release 0: Employee
 
 We'll start by focusing on the tests describing our employee (see
-`spec/employee-spec.js`).  To run the tests, navigate to the `part-1`
-directory and execute:
-
+`spec/employee_spec.js`).  To run the tests, open the file `SpecRunner.html` in
+a browser. On the command line navigate to the `part-1` directory and then run
 
 ```
 $ open SpecRunner.html
 ```
 
-This should launch a browser which will execute all of the Jasmine tests.  At
-the outset, all tests fail.  Write code in the file `employee.js` so that all
-of the tests for the employee pass.
+You are also provided an English-language version of the tests below.
+
+#### Context
+
+Assume we create an instance of `Employee` that is initialized with a first name
+and an `Array` of numbers representing their sales. You may assume this
+happens before each test.
+
+#### Tests
+
+* The new instance's first name matches the one that was passed in during initialization
+* The new instance's `sales` Array has the same sales values as the sales values that were passed in during initialization
+* The new instance's `totalSales()` method returns a total sales value based on summing all the sales' values
+* The new instance's `averageSales()` method returns an average sale value that is computed based on the values of the sales that were passed in during initialization
+
+Once all the tests are passing, you're done!
 
 ### Release 1: SalesTeam
 
 Once the tests for the custom `Employee` object pass, move on to the
-`SalesTeam` object type.  Write the code for the custom sales team object in
-the file `salesTeam.js`.  Work through the tests until all of the tests pass.
+`SalesTeam` object type.  Just as above, start by fixing the first test in
+`spec/sales-team.js`. To make the test in `spec/sales-team.js` pass you will
+make edits to `salesTeam.js`. Continue onward by fixing the remaining tests.
+
+You are also provided an English-language version of the tests below.
+
+#### Context
+
+Assume that four `Employee`s are created. A new instance of `SalesTeam` is
+initialized with an Array of these `Employee`s.  You may assume this
+initialization happens before each test.
+
+#### Tests
+
+* The new instances `employees` Array has the same scores as the scores that were passed in during initialization
+* The new instance's method `find` method searches through the `employees` Array to find the one whose first name matches
+* The new instance's method `topPerformer` method searches through the `employees` Array to find the one whose average sale is highest
 
 ### TIP
 
@@ -59,7 +86,7 @@ use tools like `console.log()` or `debugger` or any of your Chrome dev tools to
 
 Also, while JavaScript may be relatively new to you, recall that it provides
 a _wealth_ of methods to help you implement your custom methods.  `Array.prototype`
-implements methods such as `sort` among others.  Consult the 
+implements methods such as `sort` among others.  Consult the
 [Array.prototype][proto] page.
 
 Just because the _form_ is unfamiliar, don't forget your training!
