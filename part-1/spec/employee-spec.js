@@ -5,12 +5,6 @@ describe("Employee", function(){
     employee = new Employee({firstName: "Lysette", sales: [500, 100, 250, 1000]});
   });
 
-  describe("type", function() {
-    it("is a employee object", function() {
-      expect(employee).toEqual(jasmine.any(Employee));
-    });
-  });
-
   describe("firstName", function() {
     it("has a first name", function() {
       expect(employee.firstName).toEqual("Lysette");

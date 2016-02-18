@@ -50,7 +50,6 @@ happens before each test.
 
 #### Tests
 
-* The result of creating a new `Employee` instance is an object of type `Employee`
 * The new instance's first name matches the one that was passed in during initialization
 * The new instance's `sales` Array has the same sales values as the sales values that were passed in during initialization
 * The new instance's `totalSales()` method returns a total sales value based on summing all the sales' values
