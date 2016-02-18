@@ -2,13 +2,13 @@ describe("SalesTeam", function() {
   var team, jalil, irene, kelvin, myra;
 
   beforeEach(function() {
-    // Define player objects
+    // Define employee objects
     jalil =  new Employee({firstName: "Jalil", sales: [100, 300, 800, 200]});
     irene =  new Employee({firstName: "Irene", sales: [200, 1000, 1000, 500]})
     kelvin = new Employee({firstName: "Kelvin", sales: [800, 100, 750, 100]});
     myra =   new Employee({firstName: "Myra", sales: [900, 700, 1000, 750]});
 
-    // Assign roster
+    // Assign sales team
     team = new SalesTeam([jalil, myra, irene, kelvin]);
   });
 
