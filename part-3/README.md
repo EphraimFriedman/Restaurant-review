@@ -7,7 +7,10 @@ web-stack applications: user authentication, associations, validations,
 controllers, views, etc. Even a little bit of CSS.
 
 ### Site Overview
-In this section, we will build a simplified version of Yelp. We will not worry about locations or ways of categorizing listings, but instead focus solely on creating restaurants and allowing users to review them.
+
+In this section, we will build a simplified version of Yelp. We will not worry
+about locations or ways of categorizing listings, but instead focus solely on
+creating restaurants and allowing users to review them.
 
 The required functionality of the site will be described in more detail in the
 *Releases* section, but here's a basic overview.
@@ -32,7 +35,10 @@ questions, if you find yourself stuck.
 
 ## Releases
 ### Pre-release:  Setup
-We'll need to make sure that everything is set up before we begin working on the application.  From the command line, navigate to the `part-3` directory of the phase 2 assessment.  Once there, run ...
+
+We'll need to make sure that everything is set up before we begin working on
+the application.  From the command line, navigate to the `part-3` directory of
+the phase 2 assessment.  Once there, run ...
 
 0. `$ bundle`
 0. `$ bundle exec rake db:create`
