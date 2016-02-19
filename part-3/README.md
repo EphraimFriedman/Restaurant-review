@@ -43,6 +43,10 @@ the phase 2 assessment.  Once there, run ...
 0. `$ bundle`
 0. `$ bundle exec rake db:create`
 
+_NOTE:_ In the mockups below the URLs are omitted. You should determine the
+appropriate path(s) based on conventions / patterns you have learned about in
+Phase 2.
+
 ### Release 0: User Registration
 _Given:_
 * The current user does not have an account.
