@@ -9,30 +9,20 @@ In Part 2 we'll take a functioning Sinatra application and enhance the user expe
 The application is a simple site where users can write posts.  If a user wanted to write a post, here's the process.
 
 User visits the site root.
-
-![](walkthrough/1-start.png)
-
 User fills out and submits the form.
-
-![](walkthrough/2-populatedform.png)
-
 User is taken back to the posts page where the saved post is displayed.
 
-![](walkthrough/3-submittedform.png)
+![](mockups/original_functionality.gif)
 
 #### Future Site
 
 Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests, and we'll update the DOM based on the responses.  After the site is updated, here's what the user experience will be.
 
 User visits the site root.
-
-![](walkthrough/2-populatedform.png)
-
 User fills out and submits the form. Details of the saved post are added to the DOM (without refreshing).
-
-![](walkthrough/4-liked.png)
-
 Note that the form is also reset to allow another post.
+
+![](mockups/ajax_post.gif)
 
 ##### Liking
 In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will again keep the user on the same
@@ -41,6 +31,9 @@ page.
 1. User visits the site root.
 1. User clicks on a like button.
 1. The "like" count is incremented on the DOM.
+
+![](mockups/like_functionality.gif)
+
 
 ### Testing
 Feature tests are provided in Part 2 of the assessment to guide our enhancement efforts. These types of tests might be unfamiliar.  We don't need to understand how to set up or write such tests.  We'll just use them as a guide.
