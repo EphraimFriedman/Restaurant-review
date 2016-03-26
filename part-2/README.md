@@ -32,6 +32,8 @@ Our enhancements will make it so the user never leaves the homepage.  All the re
    to the DOM (without refreshing)
 1. The form is also reset thus allowing another `Post`.
 
+The animated gif here should provide some demonstration of how this works:
+
 ![](mockups/ajax_post.gif)
 
 ##### Liking
@@ -41,6 +43,8 @@ In addition to AJAXifying the site, you should add the ability for users to "lik
 1. User visits the site root.
 1. User clicks on a like button.
 1. The "like" count is incremented for that `Post` in the DOM.
+
+The animated gif here should provide some demonstration of how this works:
 
 ![](mockups/like_functionality.gif)
 
