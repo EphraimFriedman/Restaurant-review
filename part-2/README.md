@@ -6,7 +6,7 @@ In Part 2 we'll take a functioning Sinatra application and enhance the user expe
 ### User Stories
 #### Current Site
 
-The application is a simple site where users can write posts.  If a user wanted to write a post, here's the process.
+The application is a site where users can write posts.  If a user wants to write a post, here's the process:
 
 User visits the site root.
 User fills out and submits the form.
