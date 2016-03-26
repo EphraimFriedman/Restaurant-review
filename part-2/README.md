@@ -8,9 +8,16 @@ In Part 2 we'll take a functioning Sinatra application and enhance the user expe
 
 The application is a site where users can write posts.  If a user wants to write a post, here's the process:
 
-User visits the site root.
-User fills out and submits the form.
-User is taken back to the posts page where the saved post is displayed.
+1. User visits the site root.
+1. All `Post`s are listed in the main body of the page. On first visit this
+   will be empty.
+1. User fills out and submits the form which then redirects them to a page
+   which shows the newly-created `Post`.
+1. It is possible to like a `Post` by clicking the "Like" button. Clicking it
+   sends data to the server and re-renders the page (showing the incremented
+   like count).
+
+The animated gif here should provide some demonstration of how this works:
 
 ![](mockups/original_functionality.gif)
 
