@@ -23,11 +23,14 @@ The animated gif here should provide some demonstration of how this works:
 
 #### Future Site
 
-Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests, and we'll update the DOM based on the responses.  After the site is updated, here's what the user experience will be.
+Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests and the DOM will update based on the responses.  After the site is updated, here's what the user experience will be:
 
-User visits the site root.
-User fills out and submits the form. Details of the saved post are added to the DOM (without refreshing).
-Note that the form is also reset to allow another post.
+
+1. User visits the site root.
+1. All `Post`s are listed in the main body of the page.
+1. User fills out and submits the form.  Details of the saved `Post` are added
+   to the DOM (without refreshing)
+1. The form is also reset thus allowing another `Post`.
 
 ![](mockups/ajax_post.gif)
 
