@@ -35,12 +35,12 @@ Our enhancements will make it so the user never leaves the homepage.  All the re
 ![](mockups/ajax_post.gif)
 
 ##### Liking
-In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will again keep the user on the same
-page.
+
+In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will, again, keep the user on the same page.
 
 1. User visits the site root.
 1. User clicks on a like button.
-1. The "like" count is incremented on the DOM.
+1. The "like" count is incremented for that `Post` in the DOM.
 
 ![](mockups/like_functionality.gif)
 
