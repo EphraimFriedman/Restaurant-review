@@ -14,8 +14,8 @@ The application is a site where users can write posts.  If a user wants to write
 1. User fills out and submits the form which then redirects them to a page
    which shows the newly-created `Post`.
 1. It is possible to like a `Post` by clicking the "Like" button. Clicking it
-   sends data to the server and re-renders the page (showing the incremented
-   like count).
+   sends data to the server and re-renders the page (showing the like count
+   incremented by 1).
 
 The animated gif here should provide some demonstration of how this works:
 
@@ -42,7 +42,7 @@ In addition to AJAXifying the site, you should add the ability for users to "lik
 
 1. User visits the site root.
 1. User clicks on a like button.
-1. The "like" count is incremented for that `Post` in the DOM.
+1. The "like" count is incremented by `1` for that `Post` in the DOM.
 
 The animated gif here should provide some demonstration of how this works:
 
