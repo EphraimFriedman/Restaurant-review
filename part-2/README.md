@@ -7,6 +7,8 @@ experience by adding some AJAX calls.
 
 ### User Stories
 
+<a name="current_site">
+
 #### Current Site
 
 The application is a site where users can write posts.  The animated gif here
@@ -65,5 +67,24 @@ Build on work work from Release 0 and add the capability to add a new post _and
 then "Like" it_. No refresh of the page should be required to make this
 possible.
 
+### Release 2: Graceful Degradation
+
+When applying JavaScript, we should so so in a way that, when JavaScript is
+disabled, the basic functionality of the application still works. Try disabling
+JavaScript in Chrome and then visit the [http://localhost:9393/posts](http://localhost:9393/posts) again.
+
+As a reminder, you can temporarily disable JavaScript by the following steps:
+
+1. Open dev tools (cmd + option + i)
+1. Click the gear icon (red box below)
+1. Click the disable JavasCript option
+
+![](resources/devtoolpix.png)
+
+With JavaScript disabled you should experience the workflow
+described in the "[Current Site][#current_site]."
+
 ## Conclusion
-Once all the tests have passed, you have completed Part 2 of the assessment. If you haven't done so already, commit your changes and move on to Part 3.
+
+Once all the tests have passed, you have completed Part 2 of the assessment. If
+you haven't done so already, commit your changes and move on to Part 3.
