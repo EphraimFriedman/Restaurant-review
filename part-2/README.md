@@ -23,6 +23,8 @@ should provide some demonstration of how this works:
 1. **Frame 6**: Clicking the "Like" button sends data to the server and
    re-renders the page with an incremented "Like" count.
 
+<a name="future-site">
+
 #### Future Site
 
 Our enhancements will make it so the user never leaves the homepage.  All the
@@ -50,35 +52,18 @@ The animated gif here should provide some demonstration of how this works:
 
 ![](mockups/like_functionality.gif)
 
-
-### Testing
-Feature tests are provided in Part 2 of the assessment to guide our enhancement efforts. These types of tests might be unfamiliar.  We don't need to understand how to set up or write such tests.  We'll just use them as a guide.
-
 ## Releases
-### Pre-release:  Setup
-We'll need to make sure that everything is set up before we begin working on the application.  From the command line, navigate to the `part-2` directory of the phase 2 assessment.  Once there, run ...
 
-0. `$ brew update; brew install phantomjs`
-0. Ensure the installation worked. If not ask for help. Executing `phantomjs -v` should return a version number greater than `2.1` (e.g. `2.1.0`, `2.1.1`, `2.2`, `2.3`, etc.)
-0. `$ bundle`
-0. `$ bundle exec rake db:create`
-0. `$ bundle exec rake db:migrate`
-0. `$ bundle exec rake db:migrate RACK_ENV=test`
+### Release 0: AJAX Post Addition
 
-### Release 0: AJAX
-Now we'll take our application and enhance its functionality.  But, we don't want to break our functioning site in the process.  Fortunately, there are tests to help us.  Tests have been written to describe the `Post` class (see `spec/models/post_spec.rb`) and the feature of writing a new post (see `spec/features/writing_a_post_spec.rb`).
+Implement code to make the page function as described in
+[Future Site](#future-site).
 
-The feature tests for writing a new post include two contexts:  without javascript and with javascript.  The code you are provided with will pass the scenarios where javascript is not being used.  The with-javascript scenarios fail with just the provided code.
+### Release 1: Add Liking
 
-Our task is to make the with-javascript scenarios pass.  When our site is functioning properly with AJAX, all scenarios should pass.  Don't break the without-javascript test to pass the with-javascript test.
-
-To run the tests and see the with-javascript feature test fail, from the command line, run ...
-
-```
-$ bundle exec rspec
-```
-
-Use the failing scenario and future-site user story from the *Summary* to guide your development until all the tests pass.
+Build on work work from Release 0 and add the capability to add a new post _and
+then "Like" it_. No refresh of the page should be required to make this
+possible.
 
 ## Conclusion
 Once all the tests have passed, you have completed Part 2 of the assessment. If you haven't done so already, commit your changes and move on to Part 3.
