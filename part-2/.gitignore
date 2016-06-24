@@ -20,7 +20,6 @@ public/assets
 .idea/
 ignored/
 .irb-save-history
-chromedriver.log
 .tddium*
 bin/
 .env
