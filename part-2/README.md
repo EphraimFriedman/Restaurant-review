@@ -25,8 +25,9 @@ should provide some demonstration of how this works:
 
 #### Future Site
 
-Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests and the DOM will update based on the responses.  After the site is updated, here's what the user experience will be:
-
+Our enhancements will make it so the user never leaves the homepage.  All the
+requests will be AJAX requests and the DOM will update based on the responses.
+After the site is updated, here's what the user experience will be:
 
 1. User visits the site root.
 1. All `Post`s are listed in the main body of the page.
