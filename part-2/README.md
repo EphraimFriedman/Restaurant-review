@@ -56,6 +56,23 @@ The animated gif here should provide some demonstration of how this works:
 
 ![](mockups/like_functionality.gif)
 
+### Design Principle: Graceful Degradation
+
+When adding AJAX to this website, we should ensure that the site still works
+the same if JavaScript is disabled. Try disabling JavaScript in Chrome and then
+visit the [http://localhost:9393/posts](http://localhost:9393/posts) again.
+
+As a reminder, you can temporarily disable JavaScript by the following steps:
+
+1. Open dev tools (cmd + option + i)
+1. Click the gear icon (red box below)
+1. Click the disable JavasScript option
+
+![](resources/devtoolpix.png)
+
+With JavaScript disabled you should experience the workflow
+described in the "[Current Site](#current_site)."
+
 ## Releases
 
 ### Release 0: AJAX Post Addition
@@ -68,23 +85,6 @@ Implement code to make the page function as described in
 Build on work work from Release 0 and add the capability to add a new post _and
 then "Like" it_. No refresh of the page should be required to make this
 possible.
-
-### Release 2: Graceful Degradation
-
-When applying JavaScript, we should so so in a way that, when JavaScript is
-disabled, the basic functionality of the application still works. Try disabling
-JavaScript in Chrome and then visit the [http://localhost:9393/posts](http://localhost:9393/posts) again.
-
-As a reminder, you can temporarily disable JavaScript by the following steps:
-
-1. Open dev tools (cmd + option + i)
-1. Click the gear icon (red box below)
-1. Click the disable JavasScript option
-
-![](resources/devtoolpix.png)
-
-With JavaScript disabled you should experience the workflow
-described in the "[Current Site][#current_site]."
 
 ## Conclusion
 
