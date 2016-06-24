@@ -175,6 +175,8 @@ When the user clicks the edit link, they should be taken to a page to edit the i
 
 ![](mockups/edit-restaurant-page.png)
 
+### Release 3: Bidding
+
 When the user submits the form
   * the user should be taken back to the home page
   * the restaurant's information should be updated
@@ -198,6 +200,21 @@ When the user clicks the delete button
   * the restaurant should no longer appear on the page
 
 ![](mockups/home-page-with-restaurant-deleted.png)
+
+#### Apply Responsible Behavior Per User and Route
+
+Look back on the work you've done in this release. Use your best judgment (and
+be prepared to defend your choices!) about what level of security is
+appropriate and implement that in the code.
+
+Ask yourself:
+
+* Must a user be logged in to view all restaurants?
+* Should an authenticated user be able to view another user's restaurants?
+* Who should be able to delete or create an restaurant? Can anyone? Must you be
+  logged in?
+
+Make the appropriate code changes to support a responsible set of interactions.
 
 ### Release 3: Review
 Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
