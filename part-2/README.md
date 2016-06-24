@@ -1,74 +1,92 @@
 # Part 2:  AJAX
 
 ## Summary
-In Part 2 we'll take a functioning Sinatra application and enhance the user experience by adding some AJAX calls.
+
+In Part 2 we'll take a functioning Sinatra application and enhance the user
+experience by adding some AJAX calls.
 
 ### User Stories
+
+<a name="current_site">
+
 #### Current Site
 
-The application is a simple site where users can write posts.  If a user wanted to write a post, here's the process.
+The application is a site where users can write posts.  The animated gif here
+should provide some demonstration of how this works:
 
-User visits the site root.
+![](mockups/original_functionality.gif)
 
-![](walkthrough/1-start.png)
+1. **Frame 1**: User visits the site root. All `Post`s are listed in the main
+   body of the page. On first visit this will be empty.
+1. **Frame 2**: User fills out the form
+1. **Frame 3**: User submits the form
+1. **Frame 4**: User is redirected to a page that shows the newly-created `Post`.
+1. **Frame 5**: User can click on a "Like" button
+1. **Frame 6**: Clicking the "Like" button sends data to the server and
+   re-renders the page with an incremented "Like" count.
 
-User fills out and submits the form.
-
-![](walkthrough/2-populatedform.png)
-
-User is taken back to the posts page where the saved post is displayed.
-
-![](walkthrough/3-submittedform.png)
+<a name="future-site">
 
 #### Future Site
 
-Our enhancements will make it so the user never leaves the homepage.  All the requests will be AJAX requests, and we'll update the DOM based on the responses.  After the site is updated, here's what the user experience will be.
+Our enhancements will make it so the user never leaves the homepage.  All the
+requests will be AJAX requests and the DOM will update based on the responses.
+After the site is updated, here's what the user experience will be:
 
-User visits the site root.
+1. **Frame 1**: User visits the site root. All `Post`s are listed in the main
+1. **Frame 2**: User fills out the form
+1. **Frame 3**: User submits the form
+1. **Frame 4**: Details of the saved `Post` are added to the DOM (without refreshing). The form is also reset thus allowing another `Post`.
 
-![](walkthrough/2-populatedform.png)
+The animated gif here should provide some demonstration of how this works:
 
-User fills out and submits the form. Details of the saved post are added to the DOM (without refreshing).
-
-![](walkthrough/4-liked.png)
-
-Note that the form is also reset to allow another post.
+![](mockups/ajax_post.gif)
 
 ##### Liking
-In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will again keep the user on the same
-page.
 
-1. User visits the site root.
-1. User clicks on a like button.
-1. The "like" count is incremented on the DOM.
+In addition to AJAXifying the site, you should use AJAX to enable users to
+"like" a post without doing a page redirect. This flow will again keep the user
+on the same page and create an enhanced experience.
 
-### Testing
-Feature tests are provided in Part 2 of the assessment to guide our enhancement efforts. These types of tests might be unfamiliar.  We don't need to understand how to set up or write such tests.  We'll just use them as a guide.
+1. **Frame 1**: User visits the site root.
+1. **Frame 2**: User clicks on a like button.
+1. **Frame 3**: The "Like" count is incremented by `1` for that `Post` in the DOM.
+
+The animated gif here should provide some demonstration of how this works:
+
+![](mockups/like_functionality.gif)
+
+### Design Principle: Graceful Degradation
+
+When adding AJAX to this website, we should ensure that the site still works
+the same if JavaScript is disabled. Try disabling JavaScript in Chrome and then
+visit the [http://localhost:9393/posts](http://localhost:9393/posts) again.
+
+As a reminder, you can temporarily disable JavaScript by the following steps:
+
+1. Open dev tools (cmd + option + i)
+1. Click the gear icon (red box below)
+1. Click the disable JavasScript option
+
+![](resources/devtoolpix.png)
+
+With JavaScript disabled you should experience the workflow
+described in the "[Current Site](#current_site)."
 
 ## Releases
-### Pre-release:  Setup
-We'll need to make sure that everything is set up before we begin working on the application.  From the command line, navigate to the `part-2` directory of the phase 2 assessment.  Once there, run ...
 
-0. `$ brew update && brew install phantomjs`
-0. `$ bundle`
-0. `$ bundle exec rake db:create`
-0. `$ bundle exec rake db:migrate`
-0. `$ bundle exec rake db:migrate RACK_ENV=test`
+### Release 0: AJAX Post Addition
 
-### Release 0: AJAX
-Now we'll take our application and enhance its functionality.  But, we don't want to break our functioning site in the process.  Fortunately, there are tests to help us.  Tests have been written to describe the `Post` class (see `spec/models/post_spec.rb`) and the feature of writing a new post (see `spec/features/writing_a_post_spec.rb`).
+Implement code to make the page function as described in
+[Future Site](#future-site).
 
-The feature tests for writing a new post include two contexts:  without javascript and with javascript.  The code you are provided with will pass the scenarios where javascript is not being used.  The with-javascript scenarios fail with just the provided code.  
+### Release 1: Add Liking
 
-Our task is to make the with-javascript scenarios pass.  When our site is functioning properly with AJAX, all scenarios should pass.  Don't break the without-javascript test to pass the with-javascript test.
-
-To run the tests and see the with-javascript feature test fail, from the command line, run ...
-
-```
-$ bundle exec rspec
-```
-
-Use the failing scenario and future-site user story from the *Summary* to guide your development until all the tests pass.
+Build on work work from Release 0 and add the capability to add a new post _and
+then "Like" it_. No refresh of the page should be required to make this
+possible.
 
 ## Conclusion
-Once all the tests have passed, you have completed Part 2 of the assessment. If you haven't done so already, commit your changes and move on to Part 3.
+
+Once all the tests have passed, you have completed Part 2 of the assessment. If
+you haven't done so already, commit your changes and move on to Part 3.
