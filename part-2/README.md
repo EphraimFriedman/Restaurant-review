@@ -9,21 +9,19 @@ experience by adding some AJAX calls.
 
 #### Current Site
 
-The application is a site where users can write posts.  If a user wants to
-write a post, here's the process:
-
-1. User visits the site root.
-1. All `Post`s are listed in the main body of the page. On first visit this
-   will be empty.
-1. User fills out and submits the form which then redirects them to a page
-   which shows the newly-created `Post`.
-1. It is possible to like a `Post` by clicking the "Like" button. Clicking it
-   sends data to the server and re-renders the page (showing the like count
-   incremented by 1).
-
-The animated gif here should provide some demonstration of how this works:
+The application is a site where users can write posts.  The animated gif here
+should provide some demonstration of how this works:
 
 ![](mockups/original_functionality.gif)
+
+1. **Frame 1**: User visits the site root. All `Post`s are listed in the main
+   body of the page. On first visit this will be empty.
+1. **Frame 2**: User fills out the form
+1. **Frame 3**: User submits the form
+1. **Frame 4**: User is redirected to a page that shows the newly-created `Post`.
+1. **Frame 5**: User can click on a "Like" button
+1. **Frame 6**: Clicking the "Like" button sends data to the server and
+   re-renders the page with an incremented "Like" count.
 
 #### Future Site
 
