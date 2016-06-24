@@ -44,7 +44,9 @@ The animated gif here should provide some demonstration of how this works:
 
 ##### Liking
 
-In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will, again, keep the user on the same page.
+In addition to AJAXifying the site, you should use AJAX to enable users to
+"like" a post without doing a page redirect. This flow will again keep the user
+on the same page and create an enhanced experience.
 
 1. **Frame 1**: User visits the site root.
 1. **Frame 2**: User clicks on a like button.
