@@ -29,11 +29,10 @@ Our enhancements will make it so the user never leaves the homepage.  All the
 requests will be AJAX requests and the DOM will update based on the responses.
 After the site is updated, here's what the user experience will be:
 
-1. User visits the site root.
-1. All `Post`s are listed in the main body of the page.
-1. User fills out and submits the form.  Details of the saved `Post` are added
-   to the DOM (without refreshing)
-1. The form is also reset thus allowing another `Post`.
+1. **Frame 1**: User visits the site root. All `Post`s are listed in the main
+1. **Frame 2**: User fills out the form
+1. **Frame 3**: User submits the form
+1. **Frame 4**: Details of the saved `Post` are added to the DOM (without refreshing). The form is also reset thus allowing another `Post`.
 
 The animated gif here should provide some demonstration of how this works:
 
