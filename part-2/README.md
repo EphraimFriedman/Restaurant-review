@@ -42,9 +42,9 @@ The animated gif here should provide some demonstration of how this works:
 
 In addition to AJAXifying the site, you should add the ability for users to "like" a post. This flow will, again, keep the user on the same page.
 
-1. User visits the site root.
-1. User clicks on a like button.
-1. The "like" count is incremented by `1` for that `Post` in the DOM.
+1. **Frame 1**: User visits the site root.
+1. **Frame 2**: User clicks on a like button.
+1. **Frame 3**: The "Like" count is incremented by `1` for that `Post` in the DOM.
 
 The animated gif here should provide some demonstration of how this works:
 
