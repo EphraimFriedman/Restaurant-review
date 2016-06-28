@@ -62,13 +62,10 @@ When adding AJAX to this website, we should ensure that the site still works
 the same if JavaScript is disabled. Try disabling JavaScript in Chrome and then
 visit the [http://localhost:9393/posts](http://localhost:9393/posts) again.
 
-As a reminder, you can temporarily disable JavaScript by the following steps:
+As a reminder, you can use the Chrome Developer Tools to temporarily disable JavaScript (Version 51.0.2704.106 shown):
 
-1. Open dev tools (cmd + option + i)
-1. Click the gear icon (red box below)
-1. Click the disable JavasScript option
+![](readme-assets/disable-javascript.gif)
 
-![](readme-assets/devtoolpix.png)
 
 With JavaScript disabled you should experience the workflow
 described in the "[Current Site](#current_site)."
