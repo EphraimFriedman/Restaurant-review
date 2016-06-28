@@ -68,7 +68,7 @@ As a reminder, you can temporarily disable JavaScript by the following steps:
 1. Click the gear icon (red box below)
 1. Click the disable JavasScript option
 
-![](resources/devtoolpix.png)
+![](readme-assets/devtoolpix.png)
 
 With JavaScript disabled you should experience the workflow
 described in the "[Current Site](#current_site)."
