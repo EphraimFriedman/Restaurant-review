@@ -175,7 +175,7 @@ When the user clicks the edit link, they should be taken to a page to edit the i
 
 ![](mockups/edit-restaurant-page.png)
 
-### Release 3: Bidding
+### Release 3: Updating a Restaurant
 
 When the user submits the form
   * the user should be taken back to the home page
