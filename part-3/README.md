@@ -2,9 +2,8 @@
 
 ## Summary
 
-In Part 3 of the assessment, we will demonstrate our proficiency in building
-web-stack applications: user authentication, associations, validations,
-controllers, views, etc. Even a little bit of CSS.
+In Part 3 of the assessment, you'll build a web-stack application: controllers, views, user authentication, database migrations, model validations, associations, etc.  This is an opportunity to demonstrate your proficiency in the core skills from Phase 2.
+
 
 ### Site Overview
 
