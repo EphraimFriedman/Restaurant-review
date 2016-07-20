@@ -9,26 +9,8 @@ In Part 3 of the assessment, you'll build a web-stack application: controllers, 
 Part 3 is the final part of the Phase 2 assessment.  If Parts 1 and 2 are finished, devote the rest of the day to completing as much of this application as possible.  The time allocated for the assessment might end before you've finished all the releases. If time is running out, continue to complete the releases in order and make as much progress as you can.  Use your time wisely:  if you're stuck,  ask questions and get help.
 
 
-### Site Overview
-
-In this section, we will build a simplified version of Yelp. We will not worry
-about locations or ways of categorizing listings, but instead focus solely on
-creating restaurants and allowing users to review them.
-
-The required functionality of the site will be described in more detail in the
-*Releases* section, but here's a basic overview.
-
-#### All Users
-- Browse available restaurants
-
-#### Unregistered Users
-- Register a new account
-
-#### Registered Users
-- Sign in
-- Sign out
-- Create new restaurants
-- Review a restaurant
+### Web Application Overview
+You'll be building a simplified version of a restaurant review site—a much simplified version of Yelp.  Users will be able to register with the site, add restaurants to the site, and provide reviews for restaurants.  We'll build the site one feature at a time.  The requirements for each feature are described in more detail in the *Releases* section.
 
 
 ## Releases
