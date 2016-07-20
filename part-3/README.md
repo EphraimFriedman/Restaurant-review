@@ -14,6 +14,9 @@ You'll be building a simplified version of a restaurant review site—a much sim
 
 
 ## Releases
+The releases describe features to build out in your web application.  Each release will describe what to build, not how to build it.  Apply best practices.  For example, the releases contain mockups of the application.  In the mockups, the URLs are omitted from the browser's address bar.  You should determine the appropriate path for each page based on the conventions / patterns you've learned in Phase 2.
+
+
 ### Pre-release:  Setup
 
 We'll need to make sure that everything is set up before we begin working on
@@ -23,9 +26,6 @@ the phase 2 assessment.  Once there, run ...
 0. `$ bundle`
 0. `$ bundle exec rake db:create`
 
-_NOTE:_ In the mockups below the URLs are omitted. You should determine the
-appropriate path(s) based on conventions / patterns you have learned about in
-Phase 2.
 
 ### Release 0: User Registration
 _Given:_
