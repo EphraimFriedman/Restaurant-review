@@ -47,35 +47,12 @@ Clicking the "logout" link logs the user out and redirects the user back to the 
 
 
 ### Release 2:  Adding Restaurants
-We'll now give users the ability to add new restaurants to the site.
+Add a feature that allows registered users to add restaurants to the site.  Logged-in users should see an "Add a Restaurant" button on the homepage.  Clicking the button takes the user to a form.  The form should collect data like the restaurant's name, the restaurant's location, and the type of cuisine served.
 
-#### Creating Restuarants
-_Given:_
+When the form is submitted, if adding the restaurant is unsuccessful (e.g., failing a validation), the user should see the form and the associated error messages.  If listing the item is successful, the user should be redirected to a page showing the restaurant's details.  Each restaurant should be associated with the user who added the restaurant.  This is demonstrated in Figure 3.
 
-* The registered user is signed in:
-
---------
-
-On the home page create a link to add a restaurant, this link should only be visible to signed in users.
-
-![](mockups/create-restaurant-link.png)
-
-When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
-  * name
-  * cuisine (e.g., American Pub, French Bakery, etc.)
-  * address
-  * city
-  * state
-  * zip
-
-![](mockups/restaurant-form.png)
-
-When the user submits the form
-  * the user should be set as the restaurant's creator
-  * the user should be taken back to the home page
-
-![](mockups/create-restaurant-link.png)
-
+![add restaurant animation](readme-assets/add-restaurant.gif)  
+*Figure 3*.  Adding a restaurant unsuccessfully and then successfully.
 
 
 ### Release 3: -RUD'ing a Resource
