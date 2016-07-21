@@ -36,46 +36,15 @@ If registration is unsuccessful, the user should see the registration form and t
 
 
 ### Release 1: Login/Logout
-#### Login
-_Given:_
+Now that users can register, allow them to login and logout.  On the homepage, add a "login" link next to the "register" link.  Clicking the link takes the user to a page with a form for logging in.  Users sign in with an e-mail address and password.
 
-* There is a previously registered user
-* User is not currently logged in:
+If login is unsuccessful, the user should see the login form and an error message.  If login is successful, the user should be considered logged in and redirected to the homepage where the "login" and "register" links are replaced with the user's username and a "logout" link.
 
--------
+Clicking the "logout" link logs the user out and redirects the user back to the homepage.  These behaviors are demonstrated in Figure 2.
 
-On the home page, create a link to login next to the registration link.
+![login/logout animation](readme-assets/login-logout.gif)  
+*Figure 2*. Logging in unsuccessfully, logging in successfully, and logging out.
 
-![](mockups/login-link.png)
-
-When a user clicks on this link they should be taken to a page with a form to
-enter their credentials.
-
-![](mockups/login-form.png)
-
-If the credentials match, the user should be taken back to the homepage.
-
-![](mockups/registration-success.png)
-
-If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
-
-![](mockups/login-unsuccessful.png)
-
-#### Logout
-_Given:_
-
-* There is a previously registered user
-* User is currently logged in
-
---------
-
-Create a "logout" link on the homepage.
-
-![](mockups/login-success.png)
-
-When the user clicks on the logout link they should be taken to the home page and the links "Register" and "Login" should both be visible.
-
-![](mockups/login-link.png)
 
 ### Release 2: CRUD'ing a Resource
 We'll now give users the ability to add new restaurants to the site.
