@@ -55,7 +55,7 @@ When the form is submitted, if adding the restaurant is unsuccessful (e.g., fail
 *Figure 3*.  Adding a restaurant unsuccessfully and then successfully.
 
 
-### Release 3: -RUD'ing a Resource
+### Release 3:  Browsing Restaurants
 #### Reading Restuarants
 _Given:_
 * There exist previously created restaurants
@@ -66,6 +66,8 @@ Display all the restaurants
 
 ![](mockups/home-page-with-restaurants.png)
 
+
+### Release 4: --UD'ing a Resource
 #### Updating Restaurants
 _Given:_
 * The registered user is signed in
@@ -81,7 +83,7 @@ When the user clicks the edit link, they should be taken to a page to edit the i
 
 ![](mockups/edit-restaurant-page.png)
 
-### Release 4: Updating a Restaurant
+### Release 5: Updating a Restaurant
 
 When the user submits the form
   * the user should be taken back to the home page
@@ -122,7 +124,7 @@ Ask yourself:
 
 Make the appropriate code changes to support a responsible set of interactions.
 
-### Release 5: Review
+### Release 6: Review
 Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
 
 #### Restaurant Page
