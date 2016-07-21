@@ -46,7 +46,7 @@ Clicking the "logout" link logs the user out and redirects the user back to the 
 *Figure 2*. Logging in unsuccessfully, logging in successfully, and logging out.
 
 
-### Release 2: CRUD'ing a Resource
+### Release 2:  Adding Restaurants
 We'll now give users the ability to add new restaurants to the site.
 
 #### Creating Restuarants
@@ -76,6 +76,9 @@ When the user submits the form
 
 ![](mockups/create-restaurant-link.png)
 
+
+
+### Release 3: -RUD'ing a Resource
 #### Reading Restuarants
 _Given:_
 * There exist previously created restaurants
@@ -101,7 +104,7 @@ When the user clicks the edit link, they should be taken to a page to edit the i
 
 ![](mockups/edit-restaurant-page.png)
 
-### Release 3: Updating a Restaurant
+### Release 4: Updating a Restaurant
 
 When the user submits the form
   * the user should be taken back to the home page
@@ -142,7 +145,7 @@ Ask yourself:
 
 Make the appropriate code changes to support a responsible set of interactions.
 
-### Release 3: Review
+### Release 5: Review
 Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
 
 #### Restaurant Page
