@@ -72,23 +72,14 @@ If the update is unsuccessful, the user should see the form and the associated e
 
 
 ### Release 5: Deleting a Restaurant
-#### Deleting Restaurants
-_Given_
-* The registered user is signed in
-* The registered user has previously created restaurants
+In the same way that users might need to edit a restaurant, they might also need to delete a restaurant.  Add a feature that allows users to delete restaurants which they've previously added.
 
----------
+In the list of restaurants on the homepage, add a "delete" button next to the "edit" link for any restaurants the user added.  Clicking the button should delete the restaurant and redirect the user back to the homepage.  This is demonstrated in Figure 6.
 
-Add a button to delete a restaurant to each restaurant the user created
+*Note:* The "delete" button is part of a form used to submit a RESTful request to delete an item.  In Figure 6, it is styled to look like a link.
 
-![](mockups/home-page-with-delete-restaurant-button.png)
-
-When the user clicks the delete button
-  * the restaurant record should be removed from the data store
-  * the user should be taken back to the home page
-  * the restaurant should no longer appear on the page
-
-![](mockups/home-page-with-restaurant-deleted.png)
+![deleting a restaurant](readme-assets/delete-restaurant.gif)  
+*Figure 6*.  Deleting a restaurant.
 
 
 ###Release 6:  Apply Responsible Behavior Per User and Route
