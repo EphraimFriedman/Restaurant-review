@@ -63,27 +63,12 @@ Add a feature that lists restaurants.  Restaurants should be listed on the homep
 
 
 ### Release 4:  Editing a Restaurant's Details
-#### Updating Restaurants
-_Given:_
-* The registered user is signed in
-* The registered user has previously created restaurants
+Allow users to edit restaurant details.  In the list of restaurants on the homepage, if a user is logged in, the user should see an "edit" link for any restaurants the user added.  Clicking the link takes the user to a form for editing the restaurant.  The form should be populated with the restaurant's current details.  Submitting the form makes a request to update the restaurant.
 
----------
+If the update is unsuccessful, the user should see the form and the associated error messages.  If updating the restaurant is successful, the user should be redirected to a page showing the restaurant's details.  The successful outcome is demonstrated in Figure 5. 
 
-Add a link to edit restaurants created by the user
-
-![](mockups/home-page-with-edit-restaurant-links.png)
-
-When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
-
-![](mockups/edit-restaurant-page.png)
-
-
-When the user submits the form
-  * the user should be taken back to the home page
-  * the restaurant's information should be updated
-
-![](mockups/home-page-with-edited-restaurant.png)
+![editing a restaurant](readme-assets/edit-restaurant.gif)  
+*Figure 5*. Successfully editing a restaurant.
 
 
 ### Release 5: Deleting a Restaurant
