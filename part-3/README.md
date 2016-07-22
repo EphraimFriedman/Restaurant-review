@@ -83,19 +83,14 @@ In the list of restaurants on the homepage, add a "delete" button next to the "e
 
 
 ###Release 6:  Apply Responsible Behavior Per User and Route
+Refine what you've done so far.  In particular, think about how we can provide a good, secure application for users.  Use your best judgement to make any appropriate code changes.  Be prepared to explain why your choices were appropriate.
 
-Look back on the work you've done in this release. Use your best judgment (and
-be prepared to defend your choices!) about what level of security is
-appropriate and implement that in the code.
 
-Ask yourself:
-
-* Must a user be logged in to view all restaurants?
-* Should an authenticated user be able to view another user's restaurants?
-* Who should be able to delete or create an restaurant? Can anyone? Must you be
-  logged in?
-
-Make the appropriate code changes to support a responsible set of interactions.
+Consider:
+* Who can access the form to add a restaurant?
+* Who can access the form to edit a specific restaurant?
+* Who can edit a specific restaurant?
+* Who can delete a specific restaurant?
 
 
 ### Release 7: Review
