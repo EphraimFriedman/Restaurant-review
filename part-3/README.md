@@ -62,7 +62,7 @@ Add a feature that lists restaurants.  Restaurants should be listed on the homep
 *Figure 4*. Browsing restaurants and viewing a specific restaurant.
 
 
-### Release 4: --UD'ing a Resource
+### Release 4:  Editing a Restaurant's Details
 #### Updating Restaurants
 _Given:_
 * The registered user is signed in
@@ -78,7 +78,6 @@ When the user clicks the edit link, they should be taken to a page to edit the i
 
 ![](mockups/edit-restaurant-page.png)
 
-### Release 5: Updating a Restaurant
 
 When the user submits the form
   * the user should be taken back to the home page
@@ -86,6 +85,8 @@ When the user submits the form
 
 ![](mockups/home-page-with-edited-restaurant.png)
 
+
+### Release 5: Deleting a Restaurant
 #### Deleting Restaurants
 _Given_
 * The registered user is signed in
@@ -104,7 +105,8 @@ When the user clicks the delete button
 
 ![](mockups/home-page-with-restaurant-deleted.png)
 
-#### Apply Responsible Behavior Per User and Route
+
+###Release 6:  Apply Responsible Behavior Per User and Route
 
 Look back on the work you've done in this release. Use your best judgment (and
 be prepared to defend your choices!) about what level of security is
@@ -119,7 +121,8 @@ Ask yourself:
 
 Make the appropriate code changes to support a responsible set of interactions.
 
-### Release 6: Review
+
+### Release 7: Review
 Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
 
 #### Restaurant Page
