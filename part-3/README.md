@@ -56,15 +56,10 @@ When the form is submitted, if adding the restaurant is unsuccessful (e.g., fail
 
 
 ### Release 3:  Browsing Restaurants
-#### Reading Restuarants
-_Given:_
-* There exist previously created restaurants
+Add a feature that lists restaurants.  Restaurants should be listed on the homepage for any visitor to browse.  Each restaurant's name, city, and state should be displayed.  The name should be a link.  Clicking the link takes the user to a page showing the restaurant's details.  This is demonstrated in Figure 4.
 
--------
-
-Display all the restaurants
-
-![](mockups/home-page-with-restaurants.png)
+![browse restaurant animation](readme-assets/browse-restaurants.gif)  
+*Figure 4*. Browsing restaurants and viewing a specific restaurant.
 
 
 ### Release 4: --UD'ing a Resource
