@@ -93,71 +93,14 @@ Consider:
 * Who can delete a specific restaurant?
 
 
-### Release 7: Review
-Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
+### Release 7: Restaurant Reviews
+Add a feature that allows logged-in users to review a restaurant.  Adding a review will occur on the page showing the restaurant's details.  On the page add a reviews section.  Include the average review rating and the body of all reviews.  If no user is logged in, inform the user to log in to leave a review.  If a user is logged in, display a form that accepts new reviews.
 
-#### Restaurant Page
-_Given_
-* There exist previously created restaurants
+When submitting the form, if the review is unsuccessfully created, the user should see the restaurant page with the form and the associated error messages.  If the review is successfully created, the user should be redirected to the restaurant's show page.  Instead of seeing a form for writing a new review, the user should see a thank you message.  This thank you message is only visible after creating the new review; later visits to the page should display a message that the user has already left a review.  Writing a review as a logged-in user is demonstrated in Figure 7.
 
---------
+![reviewing a restaurant](readme-assets/review-restaurant.gif)  
+*Figure 7*.  Successfully logging in and reviewing a restaurant.
 
-Update the restaurant listings on the home page by making the name a link
-
-![](mockups/home-page-restaurant-links.png)
-
-When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
-
-![](mockups/restaurant-details.png)
-
-#### Creating a Review
-_Given_
-* The user is _not_ logged in
-* The user is on a restaurant detail page
-
-------
-Add a button to the page requiring log in to review
-
-![](mockups/not-logged-in-on-restaurant-page.png)
-
-When the user clicks this button they should be taken to the same page as the login instructions above
-
-![](mockups/login-form.png)
-
-_Given_
-* The registered user is signed in
-* The user is on a restaurant detail page
-
------
-
-Show a form allowing the user to
-  * rate a restaurant (1 - 5)
-  * provide a body for the review
-
-![](mockups/restaurant-page-with-review-form.png)
-
-When the user submits the form
-  * the user should be returned to the restaurant page
-  * the user should no longer see the form
-  * the user should see a thank you message
-  * the thank you message will only be visible when being redirected to the restaurant details page after creating a review
-
-![](mockups/restaurant-page-with-thank-you-message.png)
-
-#### Viewing Restaurant Reviews
-_Given_
-* The user is on a restaurant detail page
-
------
-
-Show all the reviews for a restaurant
-  * Only Show the review form if the user has not created a review.
-
-_User reviewed restaurant_
-![](mockups/restaurant-page-with-reviews-when-user-has-reviewed.png)
-
-_User has not reviewed restaurant_
-![](mockups/restaurant-page-with-reviews-when-user-has-not-reviewed.png)
 
 ## Conclusion
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
