@@ -2,285 +2,105 @@
 
 ## Summary
 
-In Part 3 of the assessment, we will demonstrate our proficiency in building
-web-stack applications: user authentication, associations, validations,
-controllers, views, etc. Even a little bit of CSS.
+In Part 3 of the assessment, you'll build a web-stack application: controllers, views, user authentication, database migrations, model validations, associations, etc.  This is an opportunity to demonstrate your proficiency in the core skills from Phase 2.
 
-### Site Overview
 
-In this section, we will build a simplified version of Yelp. We will not worry
-about locations or ways of categorizing listings, but instead focus solely on
-creating restaurants and allowing users to review them.
+### Completing Part 3
+Part 3 is the final part of the Phase 2 assessment.  If Parts 1 and 2 are finished, devote the rest of the day to completing as much of this application as possible.  The time allocated for the assessment might end before you've finished all the releases. If time is running out, continue to complete the releases in order and make as much progress as you can.  Use your time wisely:  if you're stuck,  ask questions and get help.
 
-The required functionality of the site will be described in more detail in the
-*Releases* section, but here's a basic overview.
 
-#### All Users
-- Browse available restaurants
+### Web Application Overview
+You'll be building a simplified version of a restaurant review site—a much simplified version of Yelp.  Users will be able to register with the site, add restaurants to the site, and provide reviews for restaurants.  We'll build the site one feature at a time.  The requirements for each feature are described in more detail in the *Releases* section.
 
-#### Unregistered Users
-- Register a new account
-
-#### Registered Users
-- Sign in
-- Sign out
-- Create new restaurants
-- Review a restaurant
-
-### Completing the App
-Complete as much of this CRUD app as possible in the time allowed.  If time is
-running out and it looks like the app will not be completed, continue to work
-through the releases in order and complete as much as possible. Be sure to ask
-questions, if you find yourself stuck.
 
 ## Releases
-### Pre-release:  Setup
+The releases describe features to build out in your web application.  Each release will describe what to build, not how to build it.  Apply best practices.  For example, the releases contain mockups of the application.  In the mockups, the URLs are omitted from the browser's address bar.  You should determine the appropriate path for each page based on the conventions / patterns you've learned in Phase 2.
 
-We'll need to make sure that everything is set up before we begin working on
-the application.  From the command line, navigate to the `part-3` directory of
-the phase 2 assessment.  Once there, run ...
+
+### Pre-release: Setup
+Make sure that everything is set up before we begin working on the application: install any necessary gems and create the database.  From the command line, navigate to the `part-3` directory of the Phase 2 assessment.  Once there, run ...
 
 0. `$ bundle`
 0. `$ bundle exec rake db:create`
 
-_NOTE:_ In the mockups below the URLs are omitted. You should determine the
-appropriate path(s) based on conventions / patterns you have learned about in
-Phase 2.
 
 ### Release 0: User Registration
-_Given:_
-* The current user does not have an account.
+The first feature to build is user registration, which allows users to create new accounts.  What are best practices for user registration?  What routes do you need?  How can you keep user data safe?
 
----------
+On the homepage, add a "register" link.  Clicking the link takes the user to a page with a form for creating a new account.  Users must register with an e-mail address, a username, and a password.  The e-mail address and username must be unique.
 
-Create a "Register" link on the homepage.
-![](mockups/registration-link.png)
+If registration is unsuccessful, the user should see the registration form and the associated error messages.  If registration is successful, the user should be considered logged in and redirected to the homepage where the "register" link is replaced with the user's username.  This is demonstrated in Figure 1.
 
-When the user clicks the "Register" link they should be taken to a page with a form to create a new account (email, password)
-  * Emails must be unique
+![registration mockup](readme-assets/registration.gif)  
+*Figure 1*. Registering unsuccessfully and then successfully.
 
-![](mockups/registration-form.png)
-
-Upon successful submission:
-  * the user record should be created
-  * the user should be logged in
-  * the user should be taken back to the homepage
-
-When returning to the home page:
-  * the "Register" link should no longer be visible
-  * the user should see "Welcome: [email]"
-
-![](mockups/registration-success.png)
-
-Upon unsuccessful submission:
-  * the user should be returned to the registration page
-  * the user should see an error message "Sorry, but that email has already been taken."
-
-![](mockups/registration-unsuccessful.png)
 
 ### Release 1: Login/Logout
-#### Login
-_Given:_
+Now that users can register, allow them to login and logout.  On the homepage, add a "login" link next to the "register" link.  Clicking the link takes the user to a page with a form for logging in.  Users sign in with an e-mail address and password.
 
-* There is a previously registered user
-* User is not currently logged in:
+If login is unsuccessful, the user should see the login form and an error message.  If login is successful, the user should be considered logged in and redirected to the homepage where the "login" and "register" links are replaced with the user's username and a "logout" link.
 
--------
+Clicking the "logout" link logs the user out and redirects the user back to the homepage.  These behaviors are demonstrated in Figure 2.
 
-On the home page, create a link to login next to the registration link.
+![login/logout animation](readme-assets/login-logout.gif)  
+*Figure 2*. Logging in unsuccessfully, logging in successfully, and logging out.
 
-![](mockups/login-link.png)
 
-When a user clicks on this link they should be taken to a page with a form to
-enter their credentials.
+### Release 2:  Adding Restaurants
+Add a feature that allows registered users to add restaurants to the site.  Logged-in users should see an "Add a Restaurant" button on the homepage.  Clicking the button takes the user to a form.  The form should collect data like the restaurant's name, the restaurant's location, and the type of cuisine served.
 
-![](mockups/login-form.png)
+When the form is submitted, if adding the restaurant is unsuccessful (e.g., failing a validation), the user should see the form and the associated error messages.  If listing the item is successful, the user should be redirected to a page showing the restaurant's details.  Each restaurant should be associated with the user who added the restaurant.  This is demonstrated in Figure 3.
 
-If the credentials match, the user should be taken back to the homepage.
+![add restaurant animation](readme-assets/add-restaurant.gif)  
+*Figure 3*.  Adding a restaurant unsuccessfully and then successfully.
 
-![](mockups/registration-success.png)
 
-If the credentials do not match, the user should see the login form and an error message stating the credentials were not valid.
+### Release 3:  Browsing Restaurants
+Add a feature that lists restaurants.  Restaurants should be listed on the homepage for any visitor to browse.  Each restaurant's name, city, and state should be displayed.  The name should be a link.  Clicking the link takes the user to a page showing the restaurant's details.  This is demonstrated in Figure 4.
 
-![](mockups/login-unsuccessful.png)
+![browse restaurant animation](readme-assets/browse-restaurants.gif)  
+*Figure 4*. Browsing restaurants and viewing a specific restaurant.
 
-#### Logout
-_Given:_
 
-* There is a previously registered user
-* User is currently logged in
+### Release 4:  Editing a Restaurant's Details
+Allow users to edit restaurant details.  In the list of restaurants on the homepage, if a user is logged in, the user should see an "edit" link for any restaurants the user added.  Clicking the link takes the user to a form for editing the restaurant.  The form should be populated with the restaurant's current details.  Submitting the form makes a request to update the restaurant.
 
---------
+If the update is unsuccessful, the user should see the form and the associated error messages.  If updating the restaurant is successful, the user should be redirected to a page showing the restaurant's details.  The successful outcome is demonstrated in Figure 5. 
 
-Create a "logout" link on the homepage.
+![editing a restaurant](readme-assets/edit-restaurant.gif)  
+*Figure 5*. Successfully editing a restaurant.
 
-![](mockups/login-success.png)
 
-When the user clicks on the logout link they should be taken to the home page and the links "Register" and "Login" should both be visible.
+### Release 5: Deleting a Restaurant
+In the same way that users might need to edit a restaurant, they might also need to delete a restaurant.  Add a feature that allows users to delete restaurants which they've previously added.
 
-![](mockups/login-link.png)
+In the list of restaurants on the homepage, add a "delete" button next to the "edit" link for any restaurants the user added.  Clicking the button should delete the restaurant and redirect the user back to the homepage.  This is demonstrated in Figure 6.
 
-### Release 2: CRUD'ing a Resource
-We'll now give users the ability to add new restaurants to the site.
+*Note:* The "delete" button is part of a form used to submit a RESTful request to delete an item.  In Figure 6, it is styled to look like a link.
 
-#### Creating Restuarants
-_Given:_
+![deleting a restaurant](readme-assets/delete-restaurant.gif)  
+*Figure 6*.  Deleting a restaurant.
 
-* The registered user is signed in:
 
---------
+###Release 6:  Apply Responsible Behavior Per User and Route
+Refine what you've done so far.  In particular, think about how we can provide a good, secure application for users.  Use your best judgement to make any appropriate code changes.  Be prepared to explain why your choices were appropriate.
 
-On the home page create a link to add a restaurant, this link should only be visible to signed in users.
 
-![](mockups/create-restaurant-link.png)
+Consider:
+* Who can access the form to add a restaurant?
+* Who can access the form to edit a specific restaurant?
+* Who can edit a specific restaurant?
+* Who can delete a specific restaurant?
 
-When the user clicks on the add restaurant link they should be taken to a page where they can enter the following information:
-  * name
-  * cuisine (e.g., American Pub, French Bakery, etc.)
-  * address
-  * city
-  * state
-  * zip
 
-![](mockups/restaurant-form.png)
+### Release 7: Restaurant Reviews
+Add a feature that allows logged-in users to review a restaurant.  Adding a review will occur on the page showing the restaurant's details.  On the page add a reviews section.  Include the average review rating and the body of all reviews.  If no user is logged in, inform the user to log in to leave a review.  If a user is logged in, display a form that accepts new reviews.
 
-When the user submits the form
-  * the user should be set as the restaurant's creator
-  * the user should be taken back to the home page
+When submitting the form, if the review is unsuccessfully created, the user should see the restaurant page with the form and the associated error messages.  If the review is successfully created, the user should be redirected to the restaurant's show page.  Instead of seeing a form for writing a new review, the user should see a thank you message.  This thank you message is only visible after creating the new review; later visits to the page should display a message that the user has already left a review.  Writing a review as a logged-in user is demonstrated in Figure 7.
 
-![](mockups/create-restaurant-link.png)
+![reviewing a restaurant](readme-assets/review-restaurant.gif)  
+*Figure 7*.  Successfully logging in and reviewing a restaurant.
 
-#### Reading Restuarants
-_Given:_
-* There exist previously created restaurants
-
--------
-
-Display all the restaurants
-
-![](mockups/home-page-with-restaurants.png)
-
-#### Updating Restaurants
-_Given:_
-* The registered user is signed in
-* The registered user has previously created restaurants
-
----------
-
-Add a link to edit restaurants created by the user
-
-![](mockups/home-page-with-edit-restaurant-links.png)
-
-When the user clicks the edit link, they should be taken to a page to edit the information for the restaurant
-
-![](mockups/edit-restaurant-page.png)
-
-### Release 3: Updating a Restaurant
-
-When the user submits the form
-  * the user should be taken back to the home page
-  * the restaurant's information should be updated
-
-![](mockups/home-page-with-edited-restaurant.png)
-
-#### Deleting Restaurants
-_Given_
-* The registered user is signed in
-* The registered user has previously created restaurants
-
----------
-
-Add a button to delete a restaurant to each restaurant the user created
-
-![](mockups/home-page-with-delete-restaurant-button.png)
-
-When the user clicks the delete button
-  * the restaurant record should be removed from the data store
-  * the user should be taken back to the home page
-  * the restaurant should no longer appear on the page
-
-![](mockups/home-page-with-restaurant-deleted.png)
-
-#### Apply Responsible Behavior Per User and Route
-
-Look back on the work you've done in this release. Use your best judgment (and
-be prepared to defend your choices!) about what level of security is
-appropriate and implement that in the code.
-
-Ask yourself:
-
-* Must a user be logged in to view all restaurants?
-* Should an authenticated user be able to view another user's restaurants?
-* Who should be able to delete or create an restaurant? Can anyone? Must you be
-  logged in?
-
-Make the appropriate code changes to support a responsible set of interactions.
-
-### Release 3: Review
-Knowing that all these restaurants exist is a great start, now let's provide a way for users to add a review.
-
-#### Restaurant Page
-_Given_
-* There exist previously created restaurants
-
---------
-
-Update the restaurant listings on the home page by making the name a link
-
-![](mockups/home-page-restaurant-links.png)
-
-When the user clicks on the restaurant name they should be taken to a page with all the details for the restaurant.
-
-![](mockups/restaurant-details.png)
-
-#### Creating a Review
-_Given_
-* The user is _not_ logged in
-* The user is on a restaurant detail page
-
-------
-Add a button to the page requiring log in to review
-
-![](mockups/not-logged-in-on-restaurant-page.png)
-
-When the user clicks this button they should be taken to the same page as the login instructions above
-
-![](mockups/login-form.png)
-
-_Given_
-* The registered user is signed in
-* The user is on a restaurant detail page
-
------
-
-Show a form allowing the user to
-  * rate a restaurant (1 - 5)
-  * provide a body for the review
-
-![](mockups/restaurant-page-with-review-form.png)
-
-When the user submits the form
-  * the user should be returned to the restaurant page
-  * the user should no longer see the form
-  * the user should see a thank you message
-  * the thank you message will only be visible when being redirected to the restaurant details page after creating a review
-
-![](mockups/restaurant-page-with-thank-you-message.png)
-
-#### Viewing Restaurant Reviews
-_Given_
-* The user is on a restaurant detail page
-
------
-
-Show all the reviews for a restaurant
-  * Only Show the review form if the user has not created a review.
-
-_User reviewed restaurant_
-![](mockups/restaurant-page-with-reviews-when-user-has-reviewed.png)
-
-_User has not reviewed restaurant_
-![](mockups/restaurant-page-with-reviews-when-user-has-not-reviewed.png)
 
 ## Conclusion
 Part-3 wraps up the assessment.  If you haven't already done so, commit your
