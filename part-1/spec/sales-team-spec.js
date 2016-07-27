@@ -20,7 +20,7 @@ describe("SalesTeam", function() {
 
   describe("finding an employee by name", function() {
     it("returns a employee with that first name", function() {
-      expect(team.find("Myra")).toEqual(myra);
+      expect(team.find("Irene")).toEqual(irene);
     });
   });
 
