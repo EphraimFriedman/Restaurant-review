@@ -85,5 +85,5 @@ possible.
 
 ## Conclusion
 
-Once all the tests have passed, you have completed Part 2 of the assessment. If
-you haven't done so already, commit your changes and move on to Part 3.
+You have completed Part 2 of the assessment. If you haven't done so already,
+commit your changes and move on to Part 3.
