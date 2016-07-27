@@ -24,8 +24,8 @@ describe("SalesTeam", function() {
     });
   });
 
-  describe("identifying top performer", function() {
-    it("returns the top sales employee", function() {
+  describe("identifying the top performer", function() {
+    it("returns the employee with the highest total sales amount", function() {
       expect(team.topPerformer()).toEqual(myra)
     });
   });
