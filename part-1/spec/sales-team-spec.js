@@ -14,7 +14,7 @@ describe("SalesTeam", function() {
 
   describe("employees", function() {
     it("has employees", function() {
-      expect(team.employees).toEqual([jalil, myra, irene, kelvin]);
+      expect(team.employees).toEqual([jalil, irene, myra, kelvin]);
     });
   });
 
