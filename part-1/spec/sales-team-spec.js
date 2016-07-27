@@ -9,7 +9,7 @@ describe("SalesTeam", function() {
     myra =   new Employee({firstName: "Myra", sales: [900, 700, 1000, 750]});
 
     // Assign sales team
-    team = new SalesTeam([jalil, myra, irene, kelvin]);
+    team = new SalesTeam([jalil, irene, myra, kelvin]);
   });
 
   describe("employees", function() {
