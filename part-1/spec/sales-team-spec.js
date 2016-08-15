@@ -24,9 +24,9 @@ describe("SalesTeam", function() {
     });
 
     it("does not change the number of employees", function() {
-      var countBeforeMethodCall = team.employees.length;
+      var lengthBeforeMethodCall = team.employees.length;
       team.find("Irene");
-      expect(team.employees.length).toEqual(countBeforeMethodCall);
+      expect(team.employees.length).toEqual(lengthBeforeMethodCall);
     });
   });
 
@@ -36,9 +36,9 @@ describe("SalesTeam", function() {
     });
 
     it("does not change the number of employees", function() {
-      var countBeforeMethodCall = team.employees.length;
+      var lengthBeforeMethodCall = team.employees.length;
       team.topPerformer();
-      expect(team.employees.length).toEqual(countBeforeMethodCall);
+      expect(team.employees.length).toEqual(lengthBeforeMethodCall);
     });
   });
 });
