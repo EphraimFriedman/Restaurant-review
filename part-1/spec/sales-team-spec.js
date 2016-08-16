@@ -22,11 +22,23 @@ describe("SalesTeam", function() {
     it("returns a employee with that first name", function() {
       expect(team.find("Irene")).toEqual(irene);
     });
+
+    it("does not change the number of employees", function() {
+      var lengthBeforeMethodCall = team.employees.length;
+      team.find("Irene");
+      expect(team.employees.length).toEqual(lengthBeforeMethodCall);
+    });
   });
 
   describe("identifying the top performer", function() {
     it("returns the employee with the highest total sales amount", function() {
-      expect(team.topPerformer()).toEqual(myra)
+      expect(team.topPerformer()).toEqual(myra);
+    });
+
+    it("does not change the number of employees", function() {
+      var lengthBeforeMethodCall = team.employees.length;
+      team.topPerformer();
+      expect(team.employees.length).toEqual(lengthBeforeMethodCall);
     });
   });
 });
