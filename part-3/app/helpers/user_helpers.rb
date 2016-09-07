@@ -3,5 +3,5 @@ def current_user
 end
 
 def logged_out?
-	redirect '/users/login' if !current_user 
+	redirect '/login' if !current_user 
 end
