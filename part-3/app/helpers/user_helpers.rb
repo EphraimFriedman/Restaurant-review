@@ -3,5 +3,6 @@ def current_user
 end
 
 def logged_out?
-	redirect '/login' if !current_user 
+	redirect '/login/new' if !current_user 
 end
+

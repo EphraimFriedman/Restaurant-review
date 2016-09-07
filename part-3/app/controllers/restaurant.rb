@@ -29,7 +29,7 @@ end
 
 get '/restaurants/:id/edit' do
 	@restaurant = Restaurant.find(params[:id])
-
+	redirect '/' if current_user != @restaurant.author
 	erb :'restaurants/edit'
 end
 
