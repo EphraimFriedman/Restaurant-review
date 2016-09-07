@@ -21,6 +21,7 @@ form {
 
 .restaurant-list {
 	border: 3px solid green;
+	border-radius: 25px;
 	text-align: center;
 	width: 50%;
 	margin-top: 1%;
@@ -36,6 +37,7 @@ nav a {
 
 #main-title {
 	text-align: center;
+	color: green;
 }
 
 .one-restaurant {
@@ -51,6 +53,11 @@ nav a {
 .leave-review {
 	margin-left: 5%;
 	margin-bottom: 10%;
+	text-align: center;
+}
+
+.leve-review form {
+	display: block;
 }
 
 .new-restaurant-form {
@@ -68,7 +75,25 @@ nav a {
 	padding-bottom: 2px;
 }
 
+input {
+	border-radius: 10px;
+}
 
+.login {
+	border: 3px solid green;
+	text-align: center;
+	width: 50%;
+	margin-top: 10%;
+	margin-left: 25%;
+	padding: 10px;
+}
+
+.login input {
+	display:block;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding-bottom: 5px;
+}
 
 
 
