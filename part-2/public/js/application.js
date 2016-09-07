@@ -9,8 +9,7 @@ $(document).ready(function() {
 			data: $(event.target).serialize()
 		}).done(function(response){
 			$('.post').first().before(response)
-			$(event.target).find('input[type=text]').val('')
-			$(event.target).find('textarea').val('')
+			$(event.target).find('input[type=text], textarea').val('')
 			});
 	});
 
