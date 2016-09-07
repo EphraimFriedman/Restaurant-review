@@ -18,6 +18,16 @@
   <title></title>
 </head>
 <body>
+  <h1>DBC: Eat and Review</h1>
+  <nav>
+    <% if current_user %>
+      <%= current_user.username %>
+      <a href="/logout">Logout</a>
+    <% else %>
+      <a href="/users/new">Register</a>
+      <a href="/login/new">Login</a>
+    <% end %>
+  </nav>
   <%= yield %>
 </body>
 </html>
