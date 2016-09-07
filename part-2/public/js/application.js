@@ -14,14 +14,16 @@ $(document).ready(function() {
 			});
 	});
 
-	
+	$('#posts').on('submit', '.post_like', function(event){
+		event.preventDefault()
 
-
-
-
-
-
-
-
+		$.ajax({
+			method: 'put',
+			url: $(event.target).attr('action')
+		})
+		.done(function(response) {
+			$(event.target).parent().find('.like_count').text(response['likes'])
+		});
+	});
 
 });
