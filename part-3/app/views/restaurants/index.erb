@@ -6,5 +6,9 @@
 	<% @restaurants.each do |restaurant| %>
 		<a href="/restaurants/<%= restaurant.id %>"> <%= restaurant.name %> </a>
 		<p><%= restaurant.city%>, <%= restaurant.state %></p>
+		
+		<%if current_user == restaurant.author %>
+			<a href="/restaurants/<%= restaurant.id %>/edit">edit</a><br>
+		<% end %>
 	<% end %>
 </div>

@@ -1,6 +1,6 @@
 get '/restaurants' do
 	@restaurants = Restaurant.all
-	
+
 	erb :'restaurants/index'
 end
 
@@ -24,6 +24,25 @@ post '/restaurants' do
 	else
 		@errors = restaurant.errors.full_messages
 		erb :'restaurants/new'
+	end
+end
+
+get '/restaurants/:id/edit' do
+	@restaurant = Restaurant.find(params[:id])
+
+	erb :'restaurants/edit'
+end
+
+put '/restaurants/:id' do
+	@restaurant = Restaurant.find(params[:id])
+	@restaurant.assign_attributes(params[:restaurant])
+
+	if @restaurant.save
+
+		redirect "/restaurants/#{@restaurant.id}"
+	else
+		@errors = @restaurant.errors.full_messages
+		erb :'restaurants/edit'
 	end
 
 end

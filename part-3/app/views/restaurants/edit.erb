@@ -1,0 +1,18 @@
+<h1>Edit <%= @restaurant.name %> Restaurant</h1>
+<%= erb :'_errors' %>
+<form action='/restaurants/<%= @restaurant.id %>' method='post'>
+<input type="hidden" name="_method" value="put">
+	<label>Name:</label>
+	<input type="text" name="restaurant[name]" value="<%= @restaurant.name %>">
+	<label>Adrress:</label>
+	<input type="text" name="restaurant[address]" value="<%= @restaurant.address %>">
+	<label>City:</label>
+	<input type="text" name="restaurant[city]" value="<%= @restaurant.city %>">
+	<label>State:</label>
+	<input type="text" name="restaurant[state]" value="<%= @restaurant.state %>">
+	<label>Zip Code:</label>
+	<input type="text" name="restaurant[zip]" value="<%= @restaurant.zip %>">
+	<label>Cuisine:</label>
+	<input type="text" name="restaurant[cuisine]" value="<%= @restaurant.cuisine %>">
+	<input type="submit" value="Update" >
+</form>
