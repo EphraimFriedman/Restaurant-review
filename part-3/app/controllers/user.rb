@@ -8,7 +8,7 @@ post '/users' do
 
 	if user.save
 		session[:id] = user.id
-		redirect '/'
+		redirect '/restaurants'
 	else
 		@errors = user.errors.full_messages
 		erb :'users/new'
@@ -25,7 +25,7 @@ post '/login' do
 
 	if user && user.authenticate(params[:password])
 		session[:id] = user.id
-		redirect '/'
+		redirect '/restaurants'
 	else
 		@errors = ['invalid email/password']
 		erb :'users/login'
@@ -35,5 +35,5 @@ end
 get '/logout' do
 	session.clear
 
-	redirect '/'
+	redirect '/restaurants'
 end

@@ -1,3 +1,10 @@
+get '/restaurants' do
+	@restaurants = Restaurant.all
+	
+	erb :'restaurants/index'
+end
+
+
 get '/restaurants/new' do
 	logged_out?
 	erb :'restaurants/new'
