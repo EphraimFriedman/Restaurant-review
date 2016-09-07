@@ -1,26 +1,32 @@
-<h1><%= @restaurant.name %></h1>
-<h4>Address:</h4>
-<p><%= @restaurant.address %> <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zip %> </p>
-<h4>Cuisine:</h4>
-<p><%= @restaurant.cuisine %></p>
-<h4>Added by:</h4>
-<p><%= @restaurant.author.name %></p>
+<div class="one-restaurant">
+	<h1><%= @restaurant.name %></h1>
+	<h4>Address:</h4>
+	<p><%= @restaurant.address %> <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zip %> </p>
+	<h4>Cuisine:</h4>
+	<p><%= @restaurant.cuisine %></p>
+	<h4>Added by:</h4>
+	<p><%= @restaurant.author.name %></p>
+</div>
 
-<h1>Reviews:</h1>
-<h4>Average Ratings: <%= @restaurant.average_ratings %></h4>
-<% @restaurant.reviews.each do |review| %>
-	<ul>
-		<li><%= review.body %></li>
-	</ul>
-<%= %>
-<% end %>
+<div class="reviews">
+	<h1>Reviews:</h1>
+	<h4>Average Ratings: <%= @restaurant.average_ratings %></h4>
+	<% @restaurant.reviews.each do |review| %>
+		<ul>
+			<li><%= review.body %></li>
+			<span>- <%= review.author.username %></span>
+		</ul>
+	<%= %>
+	<% end %>
+</div>
 
+<div class="leave-review">
 <h2>Leave a review</h2>
 <%if @message %>
 	<%= @message %>
 <%elsif @restaurant.already_reviewed(current_user) %>
 	<p>You have already left a review, Thank you. </p>
-<%elsif current_user && !@message %>
+<%elsif current_user %>
 	<%= erb :'_errors' %>
 	<form action='/restaurants/<%= @restaurant.id %>/reviews' method='post'>
 		<label>Ratings:</label>
@@ -38,3 +44,4 @@
 	<p>You must be logged in to create a review.</p>
 	<a href="/login/new">login</a>
 <% end %>
+</div>

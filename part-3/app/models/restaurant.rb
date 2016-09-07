@@ -3,8 +3,10 @@ class Restaurant < ActiveRecord::Base
   belongs_to :author, class_name: "User", foreign_key: :user_id
   has_many :reviews
 
-  validates :name, :address, :city, :state, :cuisine, :author, presence: true
+  validates :address, :city, :state, :cuisine, :author, presence: true
   validates :zip, presence: true, length: {minimum: 5, maximum: 5}
+
+  validates :name, presence: true, uniqueness: {scope: [:address, :zip]} 
 
 
   def average_ratings

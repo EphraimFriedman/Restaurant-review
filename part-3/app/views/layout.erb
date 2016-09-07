@@ -18,7 +18,7 @@
   <title></title>
 </head>
 <body>
-  <h1>DBC: Eat and Review</h1>
+  <h1 id="main-title">DBC: Eat and Review</h1>
   <nav>
     <% if current_user %>
       <%= current_user.username %>
@@ -27,6 +27,7 @@
       <a href="/users/new">Register</a>
       <a href="/login/new">Login</a>
     <% end %>
+    <a href="/restaurants">Home</a>
   </nav>
   <%= yield %>
 </body>

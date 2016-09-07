@@ -2,9 +2,10 @@
 	<a class="button" href="/restaurants/new"><button>Add new Restaurant</button></a>
 <% end %>
 
-<div>
+<div class="general-container">
 	<% @restaurants.each do |restaurant| %>
-		<a href="/restaurants/<%= restaurant.id %>"> <%= restaurant.name %> </a>
+	<div class="restaurant-list">
+		<h3><a href="/restaurants/<%= restaurant.id %>"> <%= restaurant.name %> </a></h3>
 		<p><%= restaurant.city%>, <%= restaurant.state %></p>
 		
 		<%if current_user == restaurant.author %>
@@ -15,5 +16,6 @@
 			</form>
 			<br>
 		<% end %>
+	</div>
 	<% end %>
 </div>
