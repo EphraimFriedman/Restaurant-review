@@ -1,7 +1,7 @@
 
 var SalesTeam = function(employee_array) {
 	this.employees = employee_array || []
-}
+};
 
 
 
@@ -10,8 +10,9 @@ SalesTeam.prototype.find = function(name) {
 	for(i = 0; i < this.employees.length; i++){
 		if(this.employees[i].firstName === name ){
 			return this.employees[i]
-		}
-	}
+		};
+	};
+
 };
 
 SalesTeam.prototype.topPerformer = function() {
@@ -20,8 +21,8 @@ SalesTeam.prototype.topPerformer = function() {
 	for(var i = 0; i < this.employees.length; i++){
 		if (this.employees[i].totalSales() > highest_preformer.totalSales()){
 			highest_preformer = this.employees[i]
-		}
-	}
+		};
+	};
 	return highest_preformer
 };
 
