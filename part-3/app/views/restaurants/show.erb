@@ -1,5 +1,40 @@
-<h2><%= @restaurant.name %></h2>
+<h1><%= @restaurant.name %></h1>
 <h4>Address:</h4>
 <p><%= @restaurant.address %> <%= @restaurant.city %>, <%= @restaurant.state %>, <%= @restaurant.zip %> </p>
 <h4>Cuisine:</h4>
 <p><%= @restaurant.cuisine %></p>
+<h4>Added by:</h4>
+<p><%= @restaurant.author.name %></p>
+
+<h1>Reviews:</h1>
+<h4>Average Ratings: <%= @restaurant.average_ratings %></h4>
+<% @restaurant.reviews.each do |review| %>
+	<ul>
+		<li><%= review.body %></li>
+	</ul>
+<%= %>
+<% end %>
+
+<h2>Leave a review</h2>
+<%if @message %>
+	<%= @message %>
+<%elsif @restaurant.already_reviewed(current_user) %>
+	<p>You have already left a review, Thank you. </p>
+<%elsif current_user && !@message %>
+	<%= erb :'_errors' %>
+	<form action='/restaurants/<%= @restaurant.id %>/reviews' method='post'>
+		<label>Ratings:</label>
+			<select name="rating">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+			</select><br>
+		<textarea name="body" rows="10" cols="40" placeholder="type your review here..."></textarea>
+		<input type="submit" value="submit">
+	</form>
+	<% else %>
+	<p>You must be logged in to create a review.</p>
+	<a href="/login/new">login</a>
+<% end %>
