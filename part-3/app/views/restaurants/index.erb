@@ -8,7 +8,12 @@
 		<p><%= restaurant.city%>, <%= restaurant.state %></p>
 		
 		<%if current_user == restaurant.author %>
-			<a href="/restaurants/<%= restaurant.id %>/edit">edit</a><br>
+			<a href="/restaurants/<%= restaurant.id %>/edit">edit</a>
+			<form action='/restaurants/<%= restaurant.id %>' method='post'>
+				<input type="hidden" name="_method" value="delete">
+				<input type="submit" value="Delete" >
+			</form>
+			<br>
 		<% end %>
 	<% end %>
 </div>

@@ -47,3 +47,33 @@ put '/restaurants/:id' do
 
 end
 
+delete '/restaurants/:id' do
+	restaurant = Restaurant.find(params[:id])
+	restaurant.destroy
+
+	redirect "/restaurants"
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
